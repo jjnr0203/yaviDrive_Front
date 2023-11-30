@@ -1,0 +1,7 @@
+.alert-validation{
+    margin-top: 3px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    color:rgb(226, 74, 51);
+}
