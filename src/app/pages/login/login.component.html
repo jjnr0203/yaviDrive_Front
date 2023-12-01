@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto">
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+  
+          <div class="mb-3">
+            <label class="form-label">Email o cedula: </label>
+            <input type="text" class="form-control" formControlName="user">
+            @if(form.controls['user'].hasError('required') && form.controls['user'].touched){
+              <div class="alert-validation">Por favor ingrese su email</div>
+            }
+          </div>
+  
+          <div class="mb-3">
+            <label  class="form-label">Ingrese su contraseña: </label>
+            <input type="text" class="form-control" formControlName="password">
+            @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
+              <div class="alert-validation">Por favor ingrese una contraseña</div>
+            }
+            @if(form.controls['password'].hasError('minlength') && form.controls['password'].dirty){
+              <div class="alert-validation">La contrasela debe contener al menos 5 caracteres</div>
+            }
+        </div>
+         
+  
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
