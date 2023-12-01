@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-8 mx-auto">
-      <form [formGroup]="form" (ngSubmit)="userUpdate()">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
         <div class="mb-3">
 
           <label class="form-label">Cédula: </label>
@@ -48,9 +48,11 @@
         <div class="mb-3">
           <label class="form-label">Elija el tipo de usuario: </label>
           <select class="form-select" formControlName="id_role">
-            <option value= 1 >Cliente</option>
-            <option value= 2 >Conductor</option>
+            @for(rol of roles; track rol.id_role){
+              <option value= {{rol.id_role}}>{{rol.name}}</option>
+            }           
           </select>
+
           @if(form.controls['id_role'].hasError('required') && form.controls['id_role'].touched){
             <div class="alert-validation">Por favor elija una opción</div>
           }
@@ -63,3 +65,4 @@
   </div>
   
 </div>
+{{form.controls['id_role'].value}}

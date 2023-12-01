@@ -16,6 +16,15 @@ export class UserComponent {
       email: [null, [Validators.required, Validators.email, Validators.pattern(/^.+@yavirac\.edu\.ec$/)]],
       id_role: [null, [Validators.required]]
     })
+    this.getRoles();
+  }
+  roles:any= this.getRoles;
+
+  getRoles() {
+    this.httpClient.get('http://localhost:3000/roles').subscribe(respuesta => {
+        this.roles = respuesta;
+        console.log(respuesta);
+      });
   }
 
   submitForm() {
