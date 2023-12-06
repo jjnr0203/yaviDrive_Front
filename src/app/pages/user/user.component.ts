@@ -23,7 +23,6 @@ export class UserComponent {
   getRoles() {
     this.httpClient.get('http://localhost:3000/roles').subscribe(respuesta => {
         this.roles = respuesta;
-        console.log(respuesta);
       });
   }
 
@@ -34,7 +33,9 @@ export class UserComponent {
         alert(response);
       });
     }
+    this.form.reset();
   }
+  
   userUpdate() {
     const data = this.form.value;
     this.httpClient

@@ -9,14 +9,14 @@
           @if(form.controls['cedula'].hasError('required') && form.controls['cedula'].touched){
             <div class="alert-validation">Por favor ingrese su número de cédula</div>
           }
-          @if(form.controls['cedula'].hasError('pattern') && form.controls['cedula'].touched){
+          @if(form.controls['cedula'].hasError('pattern') && form.controls['cedula'].dirty){
             <div class="alert-validation">Por favor ingrese un número de cédula válido</div>
           }
-          @if(form.controls['cedula'].hasError('minlength')&& form.controls['cedula'].touched){
-            <div class="alert-validation">Por favor ingrese un número de cédula válido (Debe contener 10 dígitos)</div>
+          @if(form.controls['cedula'].hasError('minlength')&& form.controls['cedula'].dirty){
+            <div class="alert-validation">Debe contener 10 dígitos</div>
           }
           @if(form.controls['cedula'].hasError('maxlength')&& form.controls['cedula'].touched){
-            <div class="alert-validation">Por favor ingrese un número de cédula válido (Debe contener 10 dígitos)</div>
+            <div class="alert-validation">Debe contener 10 dígitos</div>
           }
         </div>
 
@@ -36,7 +36,7 @@
 
         <div class="mb-3">
           <label  class="form-label">Establezca su contraseña: </label>
-          <input type="text" class="form-control" formControlName="password">
+          <input type="password" class="form-control" formControlName="password">
           @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
             <div class="alert-validation">Por favor ingrese una contraseña</div>
           }

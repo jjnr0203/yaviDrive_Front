@@ -7,18 +7,18 @@
             <label class="form-label">Email o cedula: </label>
             <input type="text" class="form-control" formControlName="user">
             @if(form.controls['user'].hasError('required') && form.controls['user'].touched){
-              <div class="alert-validation">Por favor ingrese su email</div>
+              <div class="alert-validation">El campo no puede estar vacío</div>
             }
           </div>
   
           <div class="mb-3">
             <label  class="form-label">Ingrese su contraseña: </label>
-            <input type="text" class="form-control" formControlName="password">
+            <input type="password" class="form-control" formControlName="password">
             @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
-              <div class="alert-validation">Por favor ingrese una contraseña</div>
+              <div class="alert-validation">Por favor ingrese su contraseña</div>
             }
             @if(form.controls['password'].hasError('minlength') && form.controls['password'].dirty){
-              <div class="alert-validation">La contrasela debe contener al menos 5 caracteres</div>
+              <div class="alert-validation">La contraseña debe contener al menos 5 caracteres</div>
             }
         </div>
          
@@ -29,3 +29,5 @@
     </div>
     
   </div>
+  {{form.controls['user'].value}}
+  {{form.controls['password'].value}}
