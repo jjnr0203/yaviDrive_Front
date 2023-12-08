@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class UserComponent {
+export class SignUpComponent {
   protected form: FormGroup;
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -18,7 +18,7 @@ export class UserComponent {
     })
     this.getRoles();
   }
-  roles:any= this.getRoles;
+  roles:any= [];
 
   getRoles() {
     this.httpClient.get('http://localhost:3000/roles').subscribe(respuesta => {
