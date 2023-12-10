@@ -9,6 +9,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-form.component';
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicl
     SignUpComponent,
     LoginComponent,
     DriverFormComponent,
-    VehicleFormComponent
+    VehicleFormComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
