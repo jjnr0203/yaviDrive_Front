@@ -7,13 +7,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
+import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-form.component';
+import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    DriverFormComponent,
+    VehicleFormComponent
   ],
   imports: [
     BrowserModule,
