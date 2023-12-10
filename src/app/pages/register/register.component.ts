@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
 export class RegisterComponent {
-  registro: any ;
+  registro:any={} ;
 
   constructor(private httpClient: HttpClient, private router:Router) {
     this.getRegister();
@@ -20,7 +21,7 @@ export class RegisterComponent {
       .get('http://localhost:3000/register')
       .subscribe((respuesta: any) => {
         this.registro = respuesta;
-        console.log(respuesta);
+        console.log(this.registro);
       });
   }
 
