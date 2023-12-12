@@ -48,7 +48,7 @@
           <label class="form-label">Elija el tipo de usuario: </label>
           <select class="form-select" formControlName="id_role">
             @for(rol of roles; track rol.id_role){
-              <option value= {{rol.id_role}}>{{rol.name}}</option>
+              <option value= {{rol.id_role}}>{{rol.rol_name}}</option>
             }           
           </select>
 

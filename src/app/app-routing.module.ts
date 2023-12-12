@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
   {path:'register', component:RegisterComponent},
-  {path: 'home', component:HomeComponent}, 
+  {path: 'home/:id', component:HomeComponent}, 
 ];
 
 
