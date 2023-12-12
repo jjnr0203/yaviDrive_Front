@@ -11,9 +11,9 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'driver/:id', component: DriverFormComponent },
-  { path: 'vehicle-form', component: VehicleFormComponent },
+  { path: 'vehicle-form/:id', component: VehicleFormComponent },
   {path:'register', component:RegisterComponent},
-  {path: 'home', component:HomeComponent}, 
+  {path: 'home/:id', component:HomeComponent}, 
 ];
 
 

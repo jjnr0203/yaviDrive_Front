@@ -1,38 +1,69 @@
-<div class="container">
-    <div class="row">
-      <div class="col-8 mx-auto">
-        <form [formGroup]="driverForm" (ngSubmit)="submit()">
-          <div class="mb-3">
-            <label class="form-label">Nombres: </label>
-            <input type="text" class="form-control" formControlName="name">
-            @if(driverForm.controls['name'].hasError('required') && driverForm.controls['name'].touched){
-              <div class="alert-validation">Por favor escriba su nombre</div>
-            }
+<div class="container d-flex align-items-center">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center"> 
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="assets/images/registro.jpg" class="d-block w-100" alt="...">
           </div>
-          <div class="mb-3">
-            <label class="form-label">Apellidos: </label>
-            <input type="text" class="form-control" formControlName="lastname">
-            @if(driverForm.controls['lastname'].hasError('required') && driverForm.controls['lastname'].touched){
-              <div class="alert-validation">Por favor escriba sus apellidos</div>
-            }
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/images/espera.jpg" class="d-block w-100" alt="...">
           </div>
-          <div class="mb-3">
-            <label  class="form-label">Foto </label>
-            <input type="text" class="form-control" formControlName="photo">
-            @if(driverForm.controls['photo'].hasError('required') && driverForm.controls['photo'].touched){
-              <div class="alert-validation">Por favor ingrese una contraseña</div>
-            }
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/images/auto2.jpg" class="d-block w-100" alt="...">
+
           </div>
-          <div class="mb-3">
-            <label  class="form-label">Celular </label>
-            <input type="number" class="form-control" formControlName="phone">
-            @if(driverForm.controls['phone'].hasError('required') && driverForm.controls['phone'].touched){
-              <div class="alert-validation">Por favor ingrese su número celular</div>
-            }
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
+        <p class="h1">YaviDrive</p>
+      </div>
+      <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
+        <p class="h6"> Gracias por registrarte. Para continuar en tu rol de conductor completa tus datos</p>
+      </div>
+      <form [formGroup]="driverForm" (ngSubmit)="submit()">
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Nombres: </label>
+          <input type="text" class="form-control" formControlName="name">
+          @if(driverForm.controls['name'].hasError('required') && driverForm.controls['name'].touched){
+          <div class="alert-validation">Por favor escriba su nombre</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Apellidos: </label>
+          <input type="text" class="form-control" formControlName="lastname">
+          @if(driverForm.controls['lastname'].hasError('required') && driverForm.controls['lastname'].touched){
+          <div class="alert-validation">Por favor escriba sus apellidos</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Foto </label>
+          <input type="text" class="form-control" formControlName="photo">
+          @if(driverForm.controls['photo'].hasError('required') && driverForm.controls['photo'].touched){
+          <div class="alert-validation">Por favor ingrese una contraseña</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Celular </label>
+          <input type="number" class="form-control" formControlName="phone">
+          @if(driverForm.controls['phone'].hasError('required') && driverForm.controls['phone'].touched){
+          <div class="alert-validation">Por favor ingrese su número celular</div>
+          }
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary" style="width: 200px;">Enviar</button>
+        </div>
+      </form>
+    </div>
   </div>
-  {{driverForm.controls['name'].status}}
+</div>

@@ -40,6 +40,8 @@ export class SignUpComponent {
         alert('usuario creado');
         if(this.user.id_role==2){
           this.router.navigate(['driver/' + this.user.id_user]);
+        }else if(this.user.id_role==1){
+          this.router.navigate(['customer/' + this.user.id_user]);
         }
 
       },(error) => {

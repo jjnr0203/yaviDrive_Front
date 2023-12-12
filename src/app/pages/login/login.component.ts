@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+  user:any = {}
   protected form: FormGroup;
-  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder) {
+  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder, private router: Router) {
     this.form = this.formBuilder.group({
       password: [null, [Validators.required, Validators.minLength(5)]],
       user: [null, [Validators.required]],
@@ -22,7 +23,10 @@ export class LoginComponent {
     if (this.form.valid) {
       const data = this.form.value;
       this.httpClient.post('http://localhost:3000/login', data).subscribe(response => {
-        alert(response);
+        this.user = response
+        console.log(this.user)
+        alert('usuario encontrado');
+        this.router.navigate(['home/'+ this.user.id_user])
       });
     }
   }
