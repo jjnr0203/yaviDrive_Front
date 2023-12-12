@@ -1,44 +1,77 @@
-<div class="container">
-    <div class="row">
-      <div class="col-8 mx-auto">
-        <form [formGroup]="vehicleForm" (ngSubmit)="submit()">
-            <div class="mb-3">
-              <label class="form-label">Matrícula: </label>
-              <input type="text" class="form-control" formControlName="registration">
-              @if(vehicleForm.controls['registration'].hasError('required') && vehicleForm.controls['registration'].touched){
-                <div class="alert-validation">Por favor escriba la matrúcla del vehículo</div>
-              }
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Color: </label>
-              <input type="text" class="form-control" formControlName="color">
-              @if(vehicleForm.controls['color'].hasError('required') && vehicleForm.controls['color'].touched){
-                <div class="alert-validation">Por favor escriba el color de su vehículo</div>
-              }
-            </div>
-            <div class="mb-3">
-              <label  class="form-label">Modelo </label>
-              <input type="text" class="form-control" formControlName="model">
-              @if(vehicleForm.controls['model'].hasError('required') && vehicleForm.controls['model'].touched){
-                <div class="alert-validation">Por favor ingrese el modelo del vehículo</div>
-              }
-            </div>
-            <div class="mb-3">
-              <label  class="form-label">Marca </label>
-              <input type="text" class="form-control" formControlName="brand">
-              @if(vehicleForm.controls['brand'].hasError('required') && vehicleForm.controls['brand'].touched){
-                <div class="alert-validation">Por favor indique la marca de su vehículo</div>
-              }
-            </div>
-            <div class="mb-3">
-              <label  class="form-label">Capacidad de pasajeros del vehículo </label>
-              <input type="number" class="form-control" formControlName="numSeats">
-              @if(vehicleForm.controls['numSeats'].hasError('required') && vehicleForm.controls['numSeats'].touched){
-                <div class="alert-validation">Por favor indique la capacidad de pasajeros de su vehículo</div>
-              }
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
+<div class="container d-flex align-items-center">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center"> 
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="assets/images/registro.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/images/espera.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/images/auto2.jpg" class="d-block w-100" alt="...">
+
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
+        <p class="h1">YaviDrive</p>
+      </div>
+      <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
+        <p class="h6"> Estás por fomar parte de YaviDrive, completa los datos de tu vehículo e inicia sesión para continuar</p>
+      </div>
+      <form [formGroup]="vehicleForm" (ngSubmit)="submit()">
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Matrícula: </label>
+          <input type="text" class="form-control" formControlName="registration">
+          @if(vehicleForm.controls['registration'].hasError('required') && vehicleForm.controls['registration'].touched){
+            <div class="alert-validation">Por favor escriba la matrúcla del vehículo</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label class="form-label">Color: </label>
+          <input type="text" class="form-control" formControlName="color">
+          @if(vehicleForm.controls['color'].hasError('required') && vehicleForm.controls['color'].touched){
+            <div class="alert-validation">Por favor escriba el color de su vehículo</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label  class="form-label">Modelo </label>
+          <input type="text" class="form-control" formControlName="model">
+          @if(vehicleForm.controls['model'].hasError('required') && vehicleForm.controls['model'].touched){
+            <div class="alert-validation">Por favor ingrese el modelo del vehículo</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label  class="form-label">Marca </label>
+          <input type="text" class="form-control" formControlName="brand">
+          @if(vehicleForm.controls['brand'].hasError('required') && vehicleForm.controls['brand'].touched){
+            <div class="alert-validation">Por favor indique la marca de su vehículo</div>
+          }
+        </div>
+        <div class="mb-3 col-10 mx-auto">
+          <label  class="form-label">Capacidad de pasajeros del vehículo </label>
+          <input type="number" class="form-control" formControlName="numSeats">
+          @if(vehicleForm.controls['numSeats'].hasError('required') && vehicleForm.controls['numSeats'].touched){
+            <div class="alert-validation">Por favor indique la capacidad de pasajeros de su vehículo</div>
+          }
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary" style="width: 200px;">Enviar</button>
+        </div>
+      </form>
+      
+    </div>
   </div>
+</div>
