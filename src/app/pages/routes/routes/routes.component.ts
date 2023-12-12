@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RoutesComponent {
 
-  routes:any = {} ;
+  routes:any = [] ;
 
   constructor(private httpClient: HttpClient) {
     this.getRoutes();
