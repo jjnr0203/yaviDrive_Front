@@ -8,13 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './routes-form.component.css'
 })
 export class RoutesFormComponent {
-  
-  protected form:FormGroup;
-
-  constructor(private formBuilder:FormBuilder){
-    this.form=this.formBuilder.group({
-      name:[null, [Validators.required]],
-      age:[null, [Validators.required]]
+  constructor(private formBuilder: FormBuilder, protected form: FormGroup) {
+    this.form = this.formBuilder.group({
+      name: [null, [Validators.required]],
+      age: [null, [Validators.required]]
     })
 
   }

@@ -6,6 +6,8 @@ import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-f
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RoutesComponent } from './pages/routes/routes/routes.component';
+import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
   {path:'register', component:RegisterComponent},
   {path: 'home/:id', component:HomeComponent}, 
+  {path: 'routes', component:RoutesComponent}, 
+  {path: 'routes-form', component:RoutesFormComponent}, 
 ];
 
 

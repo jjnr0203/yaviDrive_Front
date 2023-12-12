@@ -27,6 +27,7 @@ export class SignUpComponent {
   getRoles() {
     this.httpClient.get('http://localhost:3000/roles').subscribe(response => {
       this.roles = response;
+      console.log(this.roles)
     });
   }
 
