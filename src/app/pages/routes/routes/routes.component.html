@@ -1,0 +1,132 @@
+<div class="container d-flex align-items-center">
+    <div class="row">
+        <div class="col">
+            <div class="card text-center mb-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#norte">
+                    NORTE
+                  </button>
+                </div>
+              </div>
+        </div>
+
+        <div class="col">
+          <div class="card text-center mb-3" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sur">
+                  SUR
+                </button>
+              </div>
+            </div>
+        </div>
+
+        <div class="col">
+          <div class="card text-center mb-3" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#valles">
+                VALLES
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+  
+  <!-- Modal Norte-->
+  <div class="modal fade modal-xl" id="norte" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Disponibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(route of routes; track route.id_routes){
+                @if(route.id_zone == 1){
+                    
+                    <tr>
+                      <td>{{route.id_driver}}</td>
+                      <td>{{route.description}}</td>
+                      <td>{{route.availability}}</td>
+                    </tr>
+                }
+            }
+             
+            </tbody>
+          </table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sur-->
+  <div class="modal fade modal-xl" id="sur" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @for(route of routes; track route.id_routes && route.drivers){
+                @if(route.id_zone == 2 && route.name == route.name){
+                    {{route.id_driver}}
+                    {{route.name}}
+                    {{route.description}}
+                }
+              }
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Norte-->
+  <div class="modal fade modal-xl" id="valles" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @for(route of routes; track route.id_routes){
+                @if(route.id_zone == 3){
+                    {{route.description}}
+                  
+                }
+            }
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
