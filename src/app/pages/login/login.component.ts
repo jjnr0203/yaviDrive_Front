@@ -20,14 +20,30 @@ export class LoginComponent {
   };
 
   submitForm() {
+    this.form.markAllAsTouched()
     if (this.form.valid) {
       const data = this.form.value;
       this.httpClient.post('http://localhost:3000/login', data).subscribe(response => {
         this.user = response
+<<<<<<< HEAD
+        alert('usuario encontrado')
+        console.log(this.user)
+        this.router.navigate(['/home' + this.user.id_user])
+      }, (error)=>{
+        console.log(error)
+        alert('error al validar las credenciales')
+      }
+      );
+=======
         console.log(this.user)
         alert('usuario encontrado');
-        this.router.navigate(['home/'+ this.user.id_user])
+        if(this.user.id_role == 2){
+           this.router.navigate(['dirverhome/'+ this.user.id_user])
+          }else if(this.user.id_role == 1){
+          this.router.navigate(['customerhome/'+ this.user.id_user])
+        }
       });
+>>>>>>> de6dfaf7694f9795632e9f7594095a2666734a5a
     }
   }
 }

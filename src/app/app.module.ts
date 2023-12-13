@@ -25,10 +25,14 @@ import { CustomerComponent } from './pages/customer/customer.component';
     VehicleFormComponent,
     RegisterComponent,
     HomeComponent,
+<<<<<<< HEAD
+  ],
+=======
     RoutesComponent,
     RoutesFormComponent,
     CustomerComponent
     ],
+>>>>>>> de6dfaf7694f9795632e9f7594095a2666734a5a
   imports: [
     BrowserModule,
     CommonModule,
