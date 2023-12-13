@@ -11,6 +11,9 @@ import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-f
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RoutesComponent } from './pages/routes/routes/routes.component';
+import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
+import { CustomerComponent } from './pages/customer/customer.component';
 
 
 @NgModule({
@@ -22,7 +25,14 @@ import { HomeComponent } from './pages/home/home.component';
     VehicleFormComponent,
     RegisterComponent,
     HomeComponent,
+<<<<<<< HEAD
   ],
+=======
+    RoutesComponent,
+    RoutesFormComponent,
+    CustomerComponent
+    ],
+>>>>>>> de6dfaf7694f9795632e9f7594095a2666734a5a
   imports: [
     BrowserModule,
     CommonModule,

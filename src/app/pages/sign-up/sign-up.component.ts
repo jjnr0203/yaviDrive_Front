@@ -27,11 +27,13 @@ export class SignUpComponent {
   getRoles() {
     this.httpClient.get('http://localhost:3000/roles').subscribe(response => {
       this.roles = response;
+      console.log(this.roles)
     });
   }
 
 
   submit() {
+    this.form.markAllAsTouched()
     if (this.form.valid) {
       const data = this.form.value;
       this.httpClient.post('http://localhost:3000/users', data).subscribe(response => {
@@ -40,6 +42,8 @@ export class SignUpComponent {
         alert('usuario creado');
         if(this.user.id_role==2){
           this.router.navigate(['driver/' + this.user.id_user]);
+        }else if(this.user.id_role==1){
+          this.router.navigate(['customer/' + this.user.id_user]);
         }
 
       },(error) => {

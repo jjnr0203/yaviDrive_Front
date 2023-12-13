@@ -12,10 +12,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './driver-form.component.css'
 })
 export class DriverFormComponent {
-  userId = this.route.snapshot.params['id']
+  userId = this.router.snapshot.params['id']
   driverForm: FormGroup;
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private route: ActivatedRoute) {
-    if (route.snapshot.params['id'] == '0'){}
+  driver: any = {};
+  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute) {
+    if (router.snapshot.params['id'] == '0'){}
+
     this.driverForm = this.formBuilder.group({
       name: [null, Validators.required],
       lastname: [null, Validators.required],
@@ -26,16 +28,20 @@ export class DriverFormComponent {
   }
 
   submit() {
+    this.driverForm.markAllAsTouched();
     if (this.driverForm.valid) {
       const data = this.driverForm.value;
       this.httpClient.post('http://localhost:3000/drivers', data).subscribe(response => {
+        this.driver = response;
         alert('conductor creado')
+        console.log(this.driver)
+        this.route.navigate(['vehicle-form/'+ this.driver.id_driver])
+        this.driverForm.reset();
       },(error) => {
         console.log(error)
         alert('Error al crear el conductor');
       });
     }
-    this.driverForm.reset();
   }
 }
 
