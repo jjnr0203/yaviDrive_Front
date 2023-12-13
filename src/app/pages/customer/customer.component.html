@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto">
+        <form [formGroup]="customer"  (ngSubmit)="submit()">
+          <div class="mb-3">
+            <label class="form-label">Nombres: </label>
+            <input type="text" class="form-control" formControlName="name">
+            @if(customer.controls['name'].hasError('required') && customer.controls['name'].touched){
+              <div class="alert-validation">Por favor escriba su nombre</div>
+            }
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Apellidos: </label>
+            <input type="text" class="form-control" formControlName="lastname">
+            @if(customer.controls['lastname'].hasError('required') && customer.controls['lastname'].touched){
+              <div class="alert-validation">Por favor escriba sus apellidos</div>
+            }
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Foto </label>
+            <input type="text" class="form-control" formControlName="photo">
+            @if(customer.controls['photo'].hasError('required') && customer.controls['photo'].touched){
+              <div class="alert-validation">Por favor suba su foto</div>
+            }
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Celular </label>
+            <input type="number" class="form-control" formControlName="phone">
+            @if(customer.controls['phone'].hasError('required') && customer.controls['phone'].touched){
+              <div class="alert-validation">Por favor ingrese su número celular</div>
+            }
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{customer.controls['name'].status}}
+
