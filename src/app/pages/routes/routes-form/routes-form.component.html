@@ -1,3 +1,70 @@
-<form [formGroup]="form">
+<div class="container d-flex align-items-center">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="assets/images/registro.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="assets/images/espera.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <img src="assets/images/auto2.jpg" class="d-block w-100" alt="...">
+        
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+     <div class = "col-lg-6 col-md-12 col-sm-12">
+        <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
+            <p class="h1">Route</p>
+        </div>
+        <form [formGroup]="routesForm">
+            <div class="mb-3 col-10 mx-auto">
+                <label class="form-label">Descripción: </label>
+                <input type="text" class="form-control" formControlName="description">
+                @if(routesForm.controls['description'].hasError ('required') && routesForm.controls['description'].touched){
+                    <small style="color: red;">Campo Requerido</small>
+                }
+            </div>
 
-</form>
+            <div class="mb-3 col-10 mx-auto">
+                <label class="form-label">Disponibilidad: </label>
+                <input type="text" class="form-control" formControlName="availability">
+                @if(routesForm.controls['availability'].hasError ('required') && routesForm.controls ['availability'].touched){
+                    <small style="color: red;">Campo requerido</small>
+                }
+            </div>
+
+            <div class="mb-3 col-10 mx-auto">
+                <label class="form-label">Precio: </label>
+                <input type="number" class="form-control" formControlName="price">
+                @if(routesForm.controls['price'].hasError ('required') && routesForm.controls['price'].touched){
+                    <small style="color: red;">Campo requerido</small>
+                }
+            </div>
+
+            <div class="mb-3 col-10 mx-auto">
+                <label class="form-label">Zona: </label>
+                <select class="form-select" formControlName="id_zone">
+                    @for (zone of zones; track zone.id_zone) {
+                        <option value= {{zone.id_zone}}>{{zone.name}}</option>
+                    }
+                </select>
+                @if (routesForm.controls['id_zone'].hasError('required') && routesForm.controls['id_zone'].touched) {
+                    <small style="color: red;">Elija un campo</small>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+{{routesForm.controls['id_driver'].value|json}}
