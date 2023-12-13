@@ -46,18 +46,19 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Norte de Quito</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel" style="text-align: center;">Rutas Norte de Quito</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <table class="table table-striped">
             <thead>
               <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
                 <th scope="col">Precio</th>
-                <th scope="col"></th>
+                <th scope="col">Servicio</th>
               </tr>
             </thead>
             <tbody>
@@ -65,10 +66,12 @@
                 @if(route.zone_id == 1){
                     
                     <tr>
+                      <td>{{route.driver_id}}</td>
                       <td>{{route.name_d}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
                       <td>{{route.price}}</td>
+                      <td><button class="btn btn-success">Servicio</button></td>
                     </tr>
                 }
             }
@@ -97,9 +100,12 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Nombre</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Servicio</th>
               </tr>
             </thead>
             <tbody>
@@ -108,14 +114,18 @@
                     
                     <tr>
                       <td>{{route.driver_id}}</td>
+                      <td>{{route.name_d}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
+                      <td>{{route.price}}</td>
+                      <td><button class="btn btn-success">Servicio</button></td>
                     </tr>
                 }
             }
              
             </tbody>
           </table>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -137,9 +147,12 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Nombre</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Servicio</th>
               </tr>
             </thead>
             <tbody>
@@ -148,14 +161,18 @@
                     
                     <tr>
                       <td>{{route.driver_id}}</td>
+                      <td>{{route.name_d}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
+                      <td>{{route.price}}</td>
+                      <td><button class="btn btn-success">Servicio</button></td>
                     </tr>
                 }
             }
              
             </tbody>
           </table>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
