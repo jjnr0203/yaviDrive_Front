@@ -5,33 +5,25 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-driver-home',
+  templateUrl: './driver-home.component.html',
+  styleUrl: './driver-home.component.css'
 })
 
 
-export class HomeComponent {
+export class DriverHomeComponent {
   userId = this.router.snapshot.params['id']
   user: any = {};
   constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute){
     if (router.snapshot.params['id'] == '0'){}
   
-    this.getCustomer();
+    this.getDriver();
   }
 
-  getCustomer(){
-    this.httpClient.get('http://localhost:3000/customer/' + this.userId).subscribe(response =>{
+  getDriver(){
+    this.httpClient.get('http://localhost:3000/drivers/' + this.userId).subscribe(response =>{
       this.user = response
       console.log(this.user)
-
-      if(this.user.id_role == 2){
-
-        this.router.navigate(['driver-home/' + this.user.id.user])
-      }else if(this.user.id_role == 1){
-        this.router.navigate(['home/' + this.user.id.user])
-      }
     })
   }
 }
-

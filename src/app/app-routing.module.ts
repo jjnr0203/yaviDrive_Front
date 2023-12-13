@@ -6,6 +6,7 @@ import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-f
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form', component: VehicleFormComponent },
   {path:'register', component:RegisterComponent},
-  {path: 'home', component:HomeComponent}, 
+  {path: 'home/:id', component:HomeComponent},
 ];
 
 

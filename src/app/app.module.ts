@@ -21,7 +21,7 @@ import { HomeComponent } from './pages/home/home.component';
     DriverFormComponent,
     VehicleFormComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
