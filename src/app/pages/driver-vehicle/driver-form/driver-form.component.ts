@@ -28,6 +28,7 @@ export class DriverFormComponent {
   }
 
   submit() {
+    this.driverForm.markAllAsTouched();
     if (this.driverForm.valid) {
       const data = this.driverForm.value;
       this.httpClient.post('http://localhost:3000/drivers', data).subscribe(response => {
@@ -35,12 +36,12 @@ export class DriverFormComponent {
         alert('conductor creado')
         console.log(this.driver)
         this.route.navigate(['vehicle-form/'+ this.driver.id_driver])
+        this.driverForm.reset();
       },(error) => {
         console.log(error)
         alert('Error al crear el conductor');
       });
     }
-    this.driverForm.reset();
   }
 }
 

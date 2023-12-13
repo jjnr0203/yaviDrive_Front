@@ -33,6 +33,7 @@ export class SignUpComponent {
 
 
   submit() {
+    this.form.markAllAsTouched()
     if (this.form.valid) {
       const data = this.form.value;
       this.httpClient.post('http://localhost:3000/users', data).subscribe(response => {
