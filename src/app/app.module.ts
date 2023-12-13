@@ -13,7 +13,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
-import { CustomerComponent } from './pages/customer/customer.component';
 
 
 @NgModule({
@@ -27,8 +26,7 @@ import { CustomerComponent } from './pages/customer/customer.component';
     HomeComponent,
     RoutesComponent,
     RoutesFormComponent,
-    CustomerComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     CommonModule,
