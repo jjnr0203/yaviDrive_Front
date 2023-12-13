@@ -32,8 +32,8 @@ export class VehicleFormComponent {
       this.httpClient.post('http://localhost:3000/vehicle', data).subscribe(response => {
       alert('vehiculo creado')
       console.log(response)
-      this.route.navigate(['login'])
       this.vehicleForm.reset();
+      this.route.navigate(['login'])
     },(error)=>{
       console.log(error)
       alert('error al crear el vehiculo');
