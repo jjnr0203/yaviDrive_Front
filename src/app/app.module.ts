@@ -27,7 +27,7 @@ import { CustomerComponent } from './pages/customer/customer.component';
     HomeComponent,
     RoutesComponent,
     RoutesFormComponent,
-    CustomerComponent
+    CustomerComponent,
     ],
   imports: [
     BrowserModule,
