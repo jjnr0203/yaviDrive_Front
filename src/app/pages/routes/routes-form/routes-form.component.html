@@ -28,7 +28,7 @@
         <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
             <p class="h1">Route</p>
         </div>
-        <form [formGroup]="routesForm">
+        <form [formGroup]="routesForm" (ngSubmit)="submit()">
             <div class="mb-3 col-10 mx-auto">
                 <label class="form-label">Descripción: </label>
                 <input type="text" class="form-control" formControlName="description">
@@ -64,6 +64,7 @@
                     <small style="color: red;">Elija un campo</small>
                 }
             </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
         </form>
     </div>
 </div>

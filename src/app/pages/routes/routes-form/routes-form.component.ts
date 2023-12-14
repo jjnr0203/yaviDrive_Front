@@ -10,7 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './routes-form.component.css'
 })
 export class RoutesFormComponent {
-  driver_id = this.router.snapshot.params['id']
+  driver: any = {}
+  user_id = this.router.snapshot.params['id']
   protected routesForm: FormGroup;
 
 
@@ -22,9 +23,10 @@ export class RoutesFormComponent {
       availability: [null, [Validators.required]],
       price: [null, [Validators.required]],
       id_zone:[null,[Validators.required]],
-      id_driver:[this.driver_id],
+      id_driver:[this.driver],
     });
     this.getZones();
+    this.getDriver()
   }
   //fk zone
 zones : any = [];
@@ -34,5 +36,25 @@ this.httpClient.get('http://localhost:3000/zone').subscribe(response =>{
     console.log(this.zones);
  });
 }
+
+getDriver() {
+  this.httpClient
+    .get('http://localhost:3000/drivers/'+ this.user_id)
+    .subscribe((respuesta: any) => {
+      this.driver = respuesta.id_driver;
+      console.log(this.driver);
+    });
 }
 
+submit() {
+  this.routesForm.markAllAsTouched()
+  if (this.routesForm.valid) {
+    const data = this.routesForm.value;
+    this.httpClient.post('http://localhost:3000/routes', data).subscribe(response => {
+    }, (error) => {
+      console.log(error)
+      alert('Error al crear la ruta');
+    });
+  }
+ }
+}

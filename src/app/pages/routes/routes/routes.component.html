@@ -71,7 +71,9 @@
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
                       <td>{{route.price}}</td>
-                      <td><button class="btn btn-success">Servicio</button></td>
+                      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Servicio
+                      </button></td>
                     </tr>
                 }
             }
@@ -87,6 +89,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal Servicio-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        Desea aceptar el siguiente servicio
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Modal Sur-->
   <div class="modal fade modal-xl" id="sur" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

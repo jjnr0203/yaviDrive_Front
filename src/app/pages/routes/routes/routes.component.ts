@@ -24,5 +24,21 @@ export class RoutesComponent {
       });
   }
 
-
+/*   postRegister(id:number){
+    const data={
+      start_date : this.start_date,  
+    }
+    this.httpClient.post('',data).subscribe()
+  }
+ */
+  
+  /* submit() {
+    this.form.markAllAsTouched()
+    if (this.form.valid) {
+      const data = this.form.value;
+      this.httpClient.post('http://localhost:3000/users', data).subscribe(response => {
+        //this.user = response;
+        //console.log(this.user);
+        alert('usuario creado');
+  } */
 }
