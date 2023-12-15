@@ -77,9 +77,7 @@ routeUpdate() {
 submit() {
   this.routesForm.markAllAsTouched();
   if (this.routesForm.valid) {
-    if (this.routeinfo) {
-      this.routeUpdate();
-    } else {
+    
       const data = this.routesForm.value;
       this.httpClient.post('http://localhost:3000/routes', data).subscribe(response => {
       }, (error) => {
@@ -88,5 +86,5 @@ submit() {
       });
     }
   }
-}
+
 }

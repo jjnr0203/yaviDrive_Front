@@ -40,8 +40,8 @@
             <div class="mb-3 col-10 mx-auto">
                 <label class="form-label">Disponibilidad: </label>
                 <select class="form-select" formControlName="availability">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
+                        <option value="true">Si</option>
+                        <option value="false">No</option>
                 </select>
                 @if (routesForm.controls['availability'].hasError('required') && routesForm.controls['availability'].touched) {
                     <small style="color: red;">Elija un campo</small>
@@ -67,7 +67,12 @@
                     <small style="color: red;">Elija un campo</small>
                 }
             </div>
-            <button type="submit" class="btn btn-success">Enviar</button>
+            @if(routeinfo == null){
+                <button type="submit" class="btn btn-success">Enviar</button>
+            }
+            @if(routeinfo){
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            }
         </form>
     </div>
 </div>
