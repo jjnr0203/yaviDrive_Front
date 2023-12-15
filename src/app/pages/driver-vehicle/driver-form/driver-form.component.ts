@@ -15,9 +15,11 @@ export class DriverFormComponent {
   userId = this.router.snapshot.params['id']
   driverForm: FormGroup;
   driver: any = {};
+  newDriver: any = {};
   constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute) {
-    if (router.snapshot.params['id'] == '0'){}
-
+    if (this.userId == 0){}if (this.userId!=0) {
+    this.getDriver();
+    }
     this.driverForm = this.formBuilder.group({
       name: [null, Validators.required],
       lastname: [null, Validators.required],
@@ -27,15 +29,22 @@ export class DriverFormComponent {
     });
   }
 
+  getDriver(){
+    this.httpClient.get('http://localhost:3000/drivers/'+this.userId).subscribe(response=>{
+      console.log(response)
+      this.driverForm.patchValue(response)
+    })
+  }
+
   submit() {
     this.driverForm.markAllAsTouched();
     if (this.driverForm.valid) {
       const data = this.driverForm.value;
       this.httpClient.post('http://localhost:3000/drivers', data).subscribe(response => {
-        this.driver = response;
+        this.newDriver = response;
         alert('conductor creado')
-        console.log(this.driver)
-        this.route.navigate(['vehicle-form/'+ this.driver.id_driver])
+        console.log(this.newDriver)
+        this.route.navigate(['vehicle-form/'+ this.newDriver.id_driver])
         this.driverForm.reset();
       },(error) => {
         console.log(error)
