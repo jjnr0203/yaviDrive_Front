@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { DriverHomeComponent } from './pages/driver-home/driver-home.component';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
   {path:'register', component:RegisterComponent},
   {path: 'home/:id', component:HomeComponent}, 
+  {path: 'driverhome/:id', component:DriverHomeComponent}, 
   {path: 'routes/:id', component:RoutesComponent}, 
   {path: 'routes-form/:id', component:RoutesFormComponent}, 
   {path: 'customer', component: CustomerComponent},
