@@ -39,9 +39,12 @@
 
             <div class="mb-3 col-10 mx-auto">
                 <label class="form-label">Disponibilidad: </label>
-                <input type="text" class="form-control" formControlName="availability">
-                @if(routesForm.controls['availability'].hasError ('required') && routesForm.controls ['availability'].touched){
-                    <small style="color: red;">Campo requerido</small>
+                <select class="form-select" formControlName="availability">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                </select>
+                @if (routesForm.controls['availability'].hasError('required') && routesForm.controls['availability'].touched) {
+                    <small style="color: red;">Elija un campo</small>
                 }
             </div>
 
