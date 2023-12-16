@@ -1,13 +1,15 @@
+<h1></h1>
+
 <div class="container d-flex align-items-center">
     <div class="row">
         <div class="col">
             <div class="card text-center mb-3" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
+                <img src="assets/images/norte.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">NORTE</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#norte">
-                    NORTE
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#norte">
+                    VER
                   </button>
                 </div>
               </div>
@@ -15,12 +17,12 @@
 
         <div class="col">
           <div class="card text-center mb-3" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="...">
+              <img src="assets/images/sur.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">SUR</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sur">
-                  SUR
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sur">
+                  VER
                 </button>
               </div>
             </div>
@@ -28,12 +30,12 @@
 
         <div class="col">
           <div class="card text-center mb-3" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="...">
+            <img src="assets/images/valles.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">VALLES</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#valles">
-                VALLES
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#valles">
+                VER
               </button>
             </div>
           </div>
@@ -71,7 +73,9 @@
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
                       <td>{{route.price}}</td>
-                      <td><button class="btn btn-success">Servicio</button></td>
+                      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Servicio
+                      </button></td>
                     </tr>
                 }
             }
@@ -87,6 +91,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal Servicio-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        Desea aceptar el siguiente servicio
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Modal Sur-->
   <div class="modal fade modal-xl" id="sur" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
