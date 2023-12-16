@@ -1,36 +1,53 @@
+<nav class="navbar"  style="background-color: #1E1E1E;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white;">
+      <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      YAVIDRIVE 
+    </a>
+  </div>
+</nav>
+
 <div class="container">
-    <div class="row">
+  <div class="container"> 
+    <h1 class="titulo" style="text-align: right; position: relative; top: 10px">Datos Personales</h1>
+    <h6 class="texto" style="text-align: right; position: relative; top:3px; right: 20px;">Asegurate de llenar todos los campos</h6>
+    <div class="Imagen">
+      <img src="https://alianzaautomotriz.com/wp-content/uploads/2020/06/Cupra-Fromentor.jpg" 
+      style="position: absolute; left: 0px; top: 56px; width: 700px; height: 568px;">
+    </div>
+    <div class="row" style="position: absolute; right: 0px; top: 245px; width: 700px;">
       <div class="col-8 mx-auto">
         <form [formGroup]="customer" (ngSubmit)="submit()">
-          <div class="mb-3">
+          <div class="mb-3 col-10 mx-auto">
             <label class="form-label">Nombres: </label>
-            <input type="text" class="form-control" formControlName="name">
+            <input type="text" class="form-control" formControlName="name" style="background-color: rgb(240, 240, 240);">
             @if(customer.controls['name'].hasError('required') && customer.controls['name'].touched){
               <div class="alert-validation">Por favor escriba su nombre</div>
             }
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-10 mx-auto">
             <label class="form-label">Apellidos: </label>
-            <input type="text" class="form-control" formControlName="lastname">
+            <input type="text" class="form-control" formControlName="lastname" style="background-color: rgb(240, 240, 240);">
             @if(customer.controls['lastname'].hasError('required') && customer.controls['lastname'].touched){
               <div class="alert-validation">Por favor escriba sus apellidos</div>
             }
           </div>
-          <div class="mb-3">
-            <label  class="form-label">Foto </label>
-            <input type="text" class="form-control" formControlName="photo">
+          <div class="mb-3 col-10 mx-auto" style="position: absolute; top: -95px; width: 250px; right: 280px;">
+            <label  class="form-label">Ingrese el URL de su Foto </label>
+            <input type="text" class="form-control" formControlName="photo" style="background-color: rgb(240, 240, 240);">
             @if(customer.controls['photo'].hasError('required') && customer.controls['photo'].touched){
               <div class="alert-validation">Por favor suba su foto</div>
             }
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-10 mx-auto">
             <label  class="form-label">Celular </label>
-            <input type="number" class="form-control" formControlName="phone">
+            <input type="number" class="form-control" formControlName="phone" style="background-color: rgb(240, 240, 240);">
             @if(customer.controls['phone'].hasError('required') && customer.controls['phone'].touched){
               <div class="alert-validation">Por favor ingrese su número celular</div>
             }
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary" style="position: relative; left: 70px; top: 30px; width: 140px; border-color: black;">Enviar</button>
+          <button type="submit" class="btn btn-danger" style="position: relative; left: 85px; top: 30px; width: 140px; border-color: black;">Cancelar</button>
         </form>
       </div>
     </div>
