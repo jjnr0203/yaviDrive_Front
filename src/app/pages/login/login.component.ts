@@ -25,8 +25,10 @@ export class LoginComponent {
       const data = this.form.value;
       this.httpClient.post('http://localhost:3000/login', data).subscribe(response => {
         this.user = response
-        alert('usuario encontrado')
-        console.log(this.user)
+        if(this.user== null){
+          alert('usuario no encontrado')
+        }else(alert('Bienvenido'));
+        
         if(this.user.role_id == 2){
            this.router.navigate(['driverhome/'+ this.user.id_user])
           }else if(this.user.role_id == 1){
