@@ -1,11 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 mx-auto">
+<nav class="navbar " style="background-color: #1E1E1E;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white;">
+      <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      YAVIDRIVE 
+    </a>
+  </div>
+</nav>
+
+<div class="container"> 
+  <h1 class="titulo" style="text-align: right; position: relative; top: 30px">Bienvenido a Yavidrive</h1>
+  <div class="Imagen">
+    <img src="https://alianzaautomotriz.com/wp-content/uploads/2020/06/Cupra-Fromentor.jpg" 
+    style="position: absolute; left: 0px; top: 56px; width: 700px; height: 585px;">
+  </div>
+  <div class="row" style="position: absolute; right: 140px; top: 145px; width: 500px;">
+    <div class="col-8 mx-auto" >
       <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="mb-3">
 
           <label class="form-label">Cédula: </label>
-          <input type="text" class="form-control" formControlName="cedula">
+          <input type="text" class="form-control" formControlName="cedula" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['cedula'].hasError('required') && form.controls['cedula'].touched){
             <div class="alert-validation">Por favor ingrese su número de cédula</div>
           }
@@ -21,7 +35,7 @@
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email: </label>
-          <input type="email" class="form-control" id="email" formControlName="email">
+          <input type="email" class="form-control" id="email" formControlName="email" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['email'].hasError('required') && form.controls['email'].touched){
             <div class="alert-validation">Por favor ingrese su email</div>
           }
@@ -35,18 +49,18 @@
 
         <div class="mb-3">
           <label  class="form-label">Establezca su contraseña: </label>
-          <input type="password" class="form-control" formControlName="password">
+          <input type="password" class="form-control" formControlName="password" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
             <div class="alert-validation">Por favor ingrese una contraseña</div>
           }
           @if(form.controls['password'].hasError('minlength') && form.controls['password'].dirty){
-            <div class="alert-validation">La contrasela debe contener al menos 5 caracteres</div>
+            <div class="alert-validation">La contraseña debe contener al menos 5 caracteres</div>
           }
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3" >
           <label class="form-label">Elija el tipo de usuario: </label>
-          <select class="form-select" formControlName="id_role">
+          <select class="form-select" formControlName="id_role" style="background-color: rgb(240, 240, 240);">
             @for(rol of roles; track rol.id_role){
               <option value= {{rol.id_role}}>{{rol.name}}</option>
             }           
@@ -57,8 +71,8 @@
           }
         </div>
        
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary"
+        style="position: relative; left: 100px; top: 10px; width: 140px; border-color: black;">Enviar</button>
       </form>
     </div>
   </div>

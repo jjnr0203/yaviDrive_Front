@@ -27,8 +27,9 @@ export class CustomerComponent {
  submit() {
   if (this.customer.valid) {
     const data = this.customer.value;
-    this.httpClient.post('http://localhost:3000/customers', data).subscribe(response => {
+    this.httpClient.post('http://localhost:3000/customer', data).subscribe(response => {
       alert('Usuario creado')
+      this.router.navigate(['login'])
     },(error) => {
       console.log(error)
       alert('Error al crear el usuario');
