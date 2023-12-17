@@ -3,14 +3,14 @@
         <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="assets/images/registro.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="assets/images/routes-form1.jpeg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/images/espera.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="assets/images/routes-form2.jpeg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/images/auto2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="assets/images/routes-form3.jpeg" class="d-block w-100" alt="...">
         
                   </div>
                 </div>
@@ -27,8 +27,10 @@
      <div class = "col-lg-6 col-md-12 col-sm-12">
         <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
             <p class="h1">Route</p>
+
+            <p>Selecciona los campos requeridos</p>
         </div>
-        <form [formGroup]="routesForm" (ngSubmit)="submit()">
+        <form [formGroup]="routesForm"  (ngSubmit)="submit()">
             <div class="mb-3 col-10 mx-auto">
                 <label class="form-label">Descripción: </label>
                 <input type="text" class="form-control" formControlName="description">
@@ -60,7 +62,7 @@
                 <label class="form-label">Zona: </label>
                 <select class="form-select" formControlName="id_zone">
                     @for (zone of zones; track zone.id_zone) {
-                        <option value= {{zone.id_zone}}>{{zone.name}}</option>
+                        <option value= {{zone.zone_id}}>{{zone.name}}</option>
                     }
                 </select>
                 @if (routesForm.controls['id_zone'].hasError('required') && routesForm.controls['id_zone'].touched) {
@@ -68,7 +70,9 @@
                 }
             </div>
             @if(routeinfo == null){
-                <button type="submit" class="btn btn-success">Enviar</button>
+                <button typre="submit" class="btn btn-success">Enviar</button>
+
+                
             }
             @if(routeinfo){
                 <button type="submit" class="btn btn-primary">Actualizar</button>

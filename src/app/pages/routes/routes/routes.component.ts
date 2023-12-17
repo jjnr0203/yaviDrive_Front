@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class RoutesComponent {
   userId = this.router.snapshot.params['id']
   routes:any = [] ;
-  user: any = {}
+  user: any = {};
 
   constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute,) {
     this.postRegister(7);
