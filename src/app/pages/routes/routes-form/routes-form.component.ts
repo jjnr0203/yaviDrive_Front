@@ -11,19 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './routes-form.component.css'
 })
 export class RoutesFormComponent{
-  userId = this.router.snapshot.params['id']
+  userId = this.activatedRoute.snapshot.params['id']
   protected routesForm: FormGroup;
   driver: any = {}
   routeinfo: any;
 
-  constructor(protected formBuilder: FormBuilder, protected httpClient:HttpClient, protected route:Router, protected router:ActivatedRoute) {
-  /*   if (this.select == null){
-    this.getZones();
-  }else{
-    this.getDriver();
-    this.getRoute();
-  } */
-  if(this.userId ==0){}if(this.userId != 0){
+  constructor(protected formBuilder: FormBuilder, protected httpClient:HttpClient, protected router:Router, protected activatedRoute:ActivatedRoute) {
+  
+  if(this.userId ==0){}
+  if(this.userId != 0){
       this.getZones();
       this.getDriver();
     this.getRoute();
@@ -47,9 +43,9 @@ this.httpClient.get('http://localhost:3000/zone').subscribe(response =>{
 }
 
 getRoute(){
-  this.httpClient.get('http://localhost:3000/routes/'+this.userId).subscribe(response=>{
+  this.httpClient.get('http://localhost:3000/routes/'+ this.userId).subscribe(response=>{
     this.routeinfo = response
-    console.log(this.routeinfo,'asdasd')
+    console.log(this.routeinfo)
     this.routesForm.patchValue(response)
   })
 }
@@ -82,6 +78,7 @@ submit() {
     } else {
       const data = this.routesForm.value;
       this.httpClient.post('http://localhost:3000/routes', data).subscribe(response => {
+        this.router.navigate(['driverhome/' + this.userId])
       }, (error) => {
         console.log(error);
         alert('Error al crear la ruta');
