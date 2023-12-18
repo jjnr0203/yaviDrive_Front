@@ -15,6 +15,7 @@ import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { DriverHomeComponent } from './pages/driver-home/driver-home.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DriverHomeComponent } from './pages/driver-home/driver-home.component';
     RoutesComponent,
     RoutesFormComponent,
     CustomerComponent,
-    DriverHomeComponent
+    DriverHomeComponent,
+    ReceiptComponent
     ],
   imports: [
     BrowserModule,
