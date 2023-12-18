@@ -1,49 +1,28 @@
-<!--Recibo del Customer-->
-<div class="row d-flex align-items-center">
-  <div class="col-sm-8 mb-5 mb-sm-0 mx-auto">
-  <div class="card text-center card-center border border-secondary">
-  <div class="card-header">
-    <h4 class="font-weight-bold">Recibo</h4>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Información del servicio:</h5>
-    <p class="card-text">Fecha de inicio: {{registroC.start_date}}</p>
-    <p class="card-text">Fecha de finalización: {{registroC.end_date}}</p>
-    <p class="card-text">Zona: {{registroC.name_z}}</p>
-    <p class="card-text">Descripción: {{registroC.description}}</p>
-    <p class="card-text">Precio: {{registroC.price}}</p>
-    <h5 class="card-title">Información del conductor y vehículo:</h5>
-    <img src="https://s1.zerochan.net/Snorlax.600.2347543.jpg" alt="Foto del conductor" width="125" height="195">
-    <p class="card-text">Nombre: {{registroC.name_d}} {{registroC.lastname_d}}</p>
-    <p class="card-text">Número de teléfono: {{registroC.end_date}}</p>
-    <p class="card-text">Número de placa: {{registroC.registration}}</p>
-    <p class="card-text">Marca: {{registroC.brand}}</p>
-    <p class="card-text">Modelo: {{registroC.model}}</p>
-    <p class="card-text">Color: {{registroC.color}}</p>
-  </div>
-  <div class="card-footer text-body-secondary">
-    <span class="bi bi-info-circle"></span>  Recuerda que este recibo es tu cmprobante de pago.
-  </div>
-</div>
-
 <!--Recibo del Driver-->
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://s1.zerochan.net/Snorlax.600.2347543.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <p class="card-text">Fecha de inicio: {{registroD.start_date}} </p>
-        <p class="card-text">Fecha de finalización: {{registroD.end_date}}</p>
-        <p class="card-text">Nombre: {{registroD.name_c}} {{registroD.lastname_c}}</p>
-        <p class="card-text">Número de teléfono: {{registroD.phone_c}}</p>
+<br>
+<br>
+<div class="d-flex align-items-start justify-content-center" style="min-height: 100vh;">
+  <div class="card mb-3 mx-auto" style="max-width: 540px;">
+    <div class="card text-center card-center border border-secondary">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{registro.photo_c}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">Fecha de inicio: {{registro.start_date}} </p>
+            <p class="card-text">Fecha de finalización: {{registro.end_date}}</p>
+            <p class="card-text">Nombre: {{registro.name_c}} {{registro.lastname_c}}</p>
+            <p class="card-text">Número de teléfono: {{registro.phone_c}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-  
-             
+
+
+            
       
      
       

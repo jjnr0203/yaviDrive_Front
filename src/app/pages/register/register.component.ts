@@ -10,27 +10,18 @@ import { HttpClient } from '@angular/common/http';
 
 export class RegisterComponent {
   userId = this.router.snapshot.params['id']
-  registroC: any = {} ;
-  registroD: any = {} ;
+  registro: any = {} ;
 
   constructor(protected  httpClient: HttpClient,protected  route: Router,private router: ActivatedRoute) {
-    this.getRegisterC();
-    this.getRegisterD();
+    this.getRegister();
+
   }
 
-  getRegisterC() {
+  getRegister() {
     this.httpClient.get('http://localhost:3000/register/'+ this.userId).subscribe((respuesta: any) => {
-        this.registroC = respuesta;
-        console.log(this.registroC);
+        this.registro = respuesta;
+        console.log(this.registro);
       });
   }
-
-  getRegisterD() {
-    this.httpClient.get('http://localhost:3000/register/d/'+ this.userId).subscribe((respuesta: any) => {
-        this.registroD = respuesta;
-        console.log(this.registroD);
-      });
-  }
-  
 
 }

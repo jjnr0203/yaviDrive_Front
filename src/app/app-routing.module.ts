@@ -16,12 +16,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
-  {path:'register/:id', component:RegisterComponent},
-  {path: 'home/:id', component:HomeComponent}, 
-  {path: 'driverhome/:id', component:DriverHomeComponent}, 
-  {path: 'routes/:id', component:RoutesComponent}, 
-  {path: 'routes-form/:id', component:RoutesFormComponent}, 
-  {path: 'customer/:id', component: CustomerComponent},
+  { path:'register/:id', component:RegisterComponent},
+  { path: 'home/:id', component:HomeComponent}, 
+  { path: 'driverhome/:id', component:DriverHomeComponent}, 
+  { path: 'routes/:id', component:RoutesComponent}, 
+  { path: 'routes-form/:id', component:RoutesFormComponent}, 
+  { path: 'customer/:id', component: CustomerComponent},
   ]
 
 

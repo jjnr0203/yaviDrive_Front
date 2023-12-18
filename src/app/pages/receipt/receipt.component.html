@@ -1,0 +1,32 @@
+<!--Recibo del Customer-->
+<div class="row d-flex align-items-center">
+    <div class="col-sm-8 mb-5 mb-sm-0 mx-auto">
+    <div class="card text-center card-center border border-secondary">
+    <div class="card-header">
+      <h4 class="font-weight-bold">Recibo</h4>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Información del servicio:</h5>
+      <p class="card-text">Fecha de inicio: {{recibo.start_date}}</p>
+      <p class="card-text">Fecha de finalización: {{recibo.end_date}}</p>
+      <p class="card-text">Zona: {{recibo.name_z}}</p>
+      <p class="card-text">Descripción: {{recibo.description}}</p>
+      <p class="card-text">Precio: {{recibo.price}}</p>
+      <h5 class="card-title">Información del conductor y vehículo:</h5>
+      <img src="https://drive.google.com/file/d/1pmIJh5zDR8OqXzAzlf_5EUb4PsrA5jpL/view?usp=drive_link" alt="Foto del conductor" width="125" height="195">
+      <p class="card-text">Nombre: {{recibo.name_d}} {{recibo.lastname_d}}</p>
+      <p class="card-text">Número de teléfono: {{recibo.phone_d}}</p>
+      <p class="card-text">Número de placa: {{recibo.registration}}</p>
+      <p class="card-text">Marca: {{recibo.brand}}</p>
+      <p class="card-text">Modelo: {{recibo.model}}</p>
+      <p class="card-text">Color: {{recibo.color}}</p>
+      
+      <a (click)="descargarPDF()" class="btn btn-success btn-lg" style="position:absolute;right: 50px;;">Descargar PDF</a>
+
+    </div>
+    <br>
+    <br>
+    <div class="card-footer text-body-secondary">
+      <span class="bi bi-info-circle"></span>  Recuerda que este recibo es tu cmprobante de pago.
+    </div>
+  </div>
