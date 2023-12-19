@@ -6,6 +6,7 @@ import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-f
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
 import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 import { CustomerComponent } from './pages/customer/customer.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
   { path:'register/:id', component:RegisterComponent},
+  { path:'receipt/:id', component:RegisterComponent},
   { path: 'home/:id', component:HomeComponent}, 
   { path: 'driverhome/:id', component:DriverHomeComponent}, 
   { path: 'routes/:id', component:RoutesComponent}, 
