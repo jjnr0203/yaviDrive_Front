@@ -12,10 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 export class DriverHomeComponent {
-  userId = this.router.snapshot.params['id']
+  userId = this.activateRouter.snapshot.params['id']
   user: any = {};
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute){
-    if (router.snapshot.params['id'] == '0'){}
+  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activateRouter: ActivatedRoute){
+    if (activateRouter.snapshot.params['id'] == '0'){}
   
     this.getDriver();
   }
