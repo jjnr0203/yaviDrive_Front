@@ -1,29 +1,20 @@
 <!--Recibo del Driver-->
 <br>
 <br>
-<div class="d-flex align-items-start justify-content-center" style="min-height: 100vh;">
-  <div class="card mb-3 mx-auto" style="max-width: 540px;">
+@for (registro of registros; track registro.phone_c) {
     <div class="card text-center card-center border border-secondary">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="{{registro.photo_c}}" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
-          <div class="card-body">
-            <p class="card-text">Fecha de inicio: {{registro.start_date}} </p>
-            <p class="card-text">Fecha de finalización: {{registro.end_date}}</p>
-            <p class="card-text">Nombre: {{registro.name_c}} {{registro.lastname_c}}</p>
-            <p class="card-text">Número de teléfono: {{registro.phone_c}}</p>
+            <div class="card-body">
+              <p class="card-text">Fecha de inicio: {{registro.start_date}} </p>
+              <p class="card-text">Fecha de finalización: {{registro.end_date}}</p>
+              <p class="card-text">Nombre: {{registro.name_c}} {{registro.lastname_c}}</p>
+              <p class="card-text">Número de teléfono: {{registro.phone_c}}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-            
-      
-     
-      
-      
+}

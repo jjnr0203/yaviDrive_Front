@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class RegisterComponent {
   userId = this.router.snapshot.params['id']
-  registro: any = {} ;
+  registros: any = [] ;
 
   constructor(protected  httpClient: HttpClient,protected  route: Router,private router: ActivatedRoute) {
     this.getRegister();
@@ -19,8 +19,8 @@ export class RegisterComponent {
 
   getRegister() {
     this.httpClient.get('http://localhost:3000/register/'+ this.userId).subscribe((respuesta: any) => {
-        this.registro = respuesta;
-        console.log(this.registro);
+        this.registros = respuesta;
+        console.log(this.registros);
       });
   }
 
