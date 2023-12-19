@@ -1,13 +1,51 @@
+<div>
+<nav class="navbar" style="background-color: #1E1E1E;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;"><img src="assets/images/logo yavidrive.jpg" alt="" width="50" height="30" class="d-inline-block align-text-top"> YAVIDRIVE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          style="background-color: aliceblue;">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:4200/home" style="color: white;" [routerLink]="['/driverhome', userId]">INICIO</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:4200/routes" style="color: white;" [routerLink]="['/routes-form', userId]">SERVICIO RUTA</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:4200/register" style="color: white;" [routerLink]="['/register']">REGISTRO</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:4200/login" style="color: white;" [routerLink]="['/sign-up']">EDITAR DATOS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:4200/login" style="color: white;" [routerLink]="['/login']">CERRAR SESION</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+</div>
+<div>
+<h1 class="text-center" >¡Elije tu ruta!</h1>
+</div>
+<br>
+<div style="text-align: center;"  class="mb-3 col-10 mx-auto text-primary">
+<p>El destino que elegias hara que puedas llegar seguro a casa, tu familia espera por ti.</p>
+</div>
+
 <div class="container d-flex align-items-center">
     <div class="row">
         <div class="col">
             <div class="card text-center mb-3" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
+                <img src="assets/images/norte.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#norte">
-                    NORTE
+                  <h5 class="card-title">NORTE</h5>
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#norte">
+                    VER
                   </button>
                 </div>
               </div>
@@ -15,12 +53,11 @@
 
         <div class="col">
           <div class="card text-center mb-3" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="...">
+              <img src="assets/images/sur.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sur">
-                  SUR
+                <h5 class="card-title">SUR</h5>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sur">
+                  VER
                 </button>
               </div>
             </div>
@@ -28,12 +65,11 @@
 
         <div class="col">
           <div class="card text-center mb-3" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="...">
+            <img src="assets/images/valles.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#valles">
-                VALLES
+              <h5 class="card-title">VALLES</h5>
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#valles">
+                VER
               </button>
             </div>
           </div>
@@ -46,14 +82,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel" style="text-align: center;">Rutas Norte de Quito</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Norte de Quito</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
@@ -66,12 +101,11 @@
                 @if(route.zone_id == 1){
                     
                     <tr>
-                      <td>{{route.driver_id}}</td>
-                      <td>{{route.name_d}}</td>
+                      <td>{{route.name}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
                       <td>{{route.price}}</td>
-                      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Servicio
                       </button></td>
                     </tr>
@@ -81,10 +115,6 @@
             </tbody>
           </table>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
         </div>
       </div>
     </div>
@@ -99,7 +129,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Aceptar</button>
+        <button type="button" class="btn btn-success" (click)="submit()">Aceptar</button>
       </div>
     </div>
   </div>
@@ -117,7 +147,6 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
@@ -130,8 +159,7 @@
                 @if(route.zone_id == 2){
                     
                     <tr>
-                      <td>{{route.driver_id}}</td>
-                      <td>{{route.name_d}}</td>
+                      <td>{{route.name}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>
                       <td>{{route.price}}</td>
@@ -144,10 +172,7 @@
           </table>
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -164,7 +189,6 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Nombre Conductor</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Disponibilidad</th>
@@ -177,7 +201,6 @@
                 @if(route.zone_id == 3){
                     
                     <tr>
-                      <td>{{route.driver_id}}</td>
                       <td>{{route.name_d}}</td>
                       <td>{{route.description}}</td>
                       <td>{{route.availability}}</td>

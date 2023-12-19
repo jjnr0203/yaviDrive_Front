@@ -6,11 +6,13 @@ import { DriverFormComponent } from './pages/driver-vehicle/driver-form/driver-f
 import { VehicleFormComponent } from './pages/driver-vehicle/vehicle-form/vehicle-form.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
 import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { DriverHomeComponent } from './pages/driver-home/driver-home.component';
 
+import{AuthGuard} from '../app/pages/auth/auth.guard'
 const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
@@ -21,6 +23,13 @@ const routes: Routes = [
   {path: 'routes/:id', component:RoutesComponent}, 
   {path: 'routes-form/:id', component:RoutesFormComponent}, 
   {path: 'customer/:id', component: CustomerComponent},
+  { path:'register/:id', component:RegisterComponent},
+  { path:'receipt/:id', component:RegisterComponent},
+  { path: 'home/:id', component:HomeComponent}, 
+  { path: 'driverhome/:id', component:DriverHomeComponent}, 
+  { path: 'routes/:id', component:RoutesComponent}, 
+  { path: 'routes-form/:id', component:RoutesFormComponent}, 
+  { path: 'customer/:id', component: CustomerComponent},
   ]
 
 

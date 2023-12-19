@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,20 +9,19 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class RegisterComponent {
-  registro:any={} ;
+  userId = this.router.snapshot.params['id']
+  registro: any = {} ;
 
-  constructor(private httpClient: HttpClient, private router:Router) {
+  constructor(protected  httpClient: HttpClient,protected  route: Router,private router: ActivatedRoute) {
     this.getRegister();
+
   }
 
   getRegister() {
-    this.httpClient
-      .get('http://localhost:3000/register')
-      .subscribe((respuesta: any) => {
+    this.httpClient.get('http://localhost:3000/register/'+ this.userId).subscribe((respuesta: any) => {
         this.registro = respuesta;
         console.log(this.registro);
       });
   }
-
 
 }
