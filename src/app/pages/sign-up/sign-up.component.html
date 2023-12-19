@@ -1,3 +1,4 @@
+<div>
 <nav class="navbar " style="background-color: #1E1E1E;" >
   <div class="container-fluid">
     <a class="navbar-brand" style="color: white;">
@@ -5,18 +6,42 @@
     </a>
   </div>
 </nav>
+</div>
 
-<div class="container"> 
-  <h1 class="titulo" style="text-align: right; position: relative; top: 30px">Bienvenido a Yavidrive</h1>
-  <div class="Imagen">
-    <img src="assets/images/sign-up.jpeg">
-    <img src="assets/images/auto2.jpg"
-    style="position: absolute; left: 0px; top: 56px; width: 700px; height: 585px;">
+<div class="container d-flex align-items-center">
+  <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                  <img src="assets/images/routes-form1.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="assets/images/routes-form2.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="assets/images/routes-form3.jpeg" class="d-block w-100" alt="...">
+      
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+      </div>
+
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
+      <p class="h1">Sign up</p>
+
+      <p>Selecciona los campos requeridos</p>
   </div>
-  <div class="row" style="position: absolute; right: 80px; top: 150px; width: 500px;">
-    <div class="col-8 mx-auto" >
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <div class="mb-3">
 
           <label class="form-label">Cédula: </label>
           <input type="text" class="form-control" formControlName="cedula" style="background-color: rgb(240, 240, 240);">
@@ -32,8 +57,7 @@
           @if(form.controls['cedula'].hasError('maxlength')&& form.controls['cedula'].touched){
             <div class="alert-validation">Debe contener 10 dígitos</div>
           }
-        </div>
-        <div class="mb-3">
+
           <label for="email" class="form-label">Email: </label>
           <input type="email" class="form-control" id="email" formControlName="email" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['email'].hasError('required') && form.controls['email'].touched){
@@ -45,9 +69,7 @@
           @if(form.controls['email'].hasError('pattern') && form.controls['email'].dirty){
             <div class="alert-validation"> ...&#64;yavirac.edu.ec</div>
           }
-        </div>
 
-        <div class="mb-3">
           <label  class="form-label">Establezca su contraseña: </label>
           <input type="password" class="form-control" formControlName="password" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
@@ -56,9 +78,7 @@
           @if(form.controls['password'].hasError('minlength') && form.controls['password'].dirty){
             <div class="alert-validation">La contraseña debe contener al menos 5 caracteres</div>
           }
-        </div>
 
-        <div class="mb-3" >
           <label class="form-label">Elija el tipo de usuario: </label>
           <select class="form-select" formControlName="id_role" style="background-color: rgb(240, 240, 240);">
             @for(rol of roles; track rol.id_role){
@@ -69,9 +89,8 @@
           @if(form.controls['id_role'].hasError('required') && form.controls['id_role'].touched){
             <div class="alert-validation">Por favor elija una opción</div>
           }
-        </div>
        
-        <button type="submit" class="btn btn-primary"
+        <button type="submit" class="btn btn-success"
         style="position: relative; left: 80px; top: 10px; width: 140px; border-color: black;">Enviar</button>
       </form>
     </div>
