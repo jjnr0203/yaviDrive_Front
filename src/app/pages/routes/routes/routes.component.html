@@ -1,7 +1,7 @@
 <div>
 <nav class="navbar" style="background-color: #1E1E1E;">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color: white;">YAVIDRIVE</a>
+      <a class="navbar-brand" href="#" style="color: white;"><img src="assets/images/logo yavidrive.jpg" alt="" width="50" height="30" class="d-inline-block align-text-top"> YAVIDRIVE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
           style="background-color: aliceblue;">
@@ -29,9 +29,12 @@
   </div>
 </nav>
 </div>
-
 <div>
 <h1 class="text-center" >¡Elije tu ruta!</h1>
+</div>
+<br>
+<div style="text-align: center;"  class="mb-3 col-10 mx-auto text-primary">
+<p>El destino que elegias hara que puedas llegar seguro a casa, tu familia espera por ti.</p>
 </div>
 
 <div class="container d-flex align-items-center">
@@ -125,8 +128,8 @@
         Desea aceptar el siguiente servicio
       </div>
       <div class="modal-footer">
-        <button routerLink="/routes-form/" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Aceptar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)="submit()">Aceptar</button>
       </div>
     </div>
   </div>

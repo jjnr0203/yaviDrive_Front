@@ -62,8 +62,7 @@ getDriver() {
 routeUpdate() {
   this.getDriver();
   const data = this.routesForm.value;
-  this.httpClient
-    .put('http://localhost:3000/routes/'+ this.routeinfo.id_routes, data)
+  this.httpClient.put('http://localhost:3000/routes/'+ this.routeinfo.id_routes, data)
     .subscribe(response => {
       alert(response)
     }
