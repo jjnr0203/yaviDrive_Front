@@ -1,223 +1,223 @@
 <div>
-<nav class="navbar" style="background-color: #1E1E1E;">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color: white;"><img src="assets/images/logo yavidrive.jpg" alt="" width="50" height="30" class="d-inline-block align-text-top"> YAVIDRIVE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-          style="background-color: aliceblue;">
-          <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src=""> YAVIDRIVE</a>
+      <p>{{userId.name_c}}</p>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                  <a class="nav-link" href="http://localhost:4200/home" style="color: white;" [routerLink]="['/driverhome', userId]">INICIO</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="http://localhost:4200/routes" style="color: white;" [routerLink]="['/routes-form', userId]">SERVICIO RUTA</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="http://localhost:4200/register" style="color: white;" [routerLink]="['/register']">REGISTRO</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="http://localhost:4200/login" style="color: white;" [routerLink]="['/sign-up']">EDITAR DATOS</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="http://localhost:4200/login" style="color: white;" [routerLink]="['/login']">CERRAR SESION</a>
-              </li>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Usuario</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" [routerLink]="['/home', userId]">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" [routerLink]="['/receipt',userId]">REGISTRO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" [routerLink]="['/customer', userId]">EDITAR DATOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" [routerLink]="['/login']">CERRAR SESION</a>
+            </li>
           </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success" type="submit">Buscar</button>
+          </form>
+        </div>
       </div>
-  </div>
-</nav>
-</div>
-<div>
-<h1 class="text-center" >¡Elije tu ruta!</h1>
+    </div>
+  </nav>
 </div>
 <br>
-<div style="text-align: center;"  class="mb-3 col-10 mx-auto text-primary">
-<p>El destino que elegias hara que puedas llegar seguro a casa, tu familia espera por ti.</p>
+<br>
+<br>
+<div>
+  <h1 class="text-center">¡Elije tu ruta!</h1>
+</div>
+<div style="text-align: center;" class="mb-3 col-10 mx-auto text-primary">
+  <p>El destino que elegias hara que puedas llegar seguro a casa, tu familia espera por ti.</p>
 </div>
 
 <div class="container d-flex align-items-center">
-    <div class="row">
-        <div class="col">
-            <div class="card text-center mb-3" style="width: 18rem;">
-                <img src="assets/images/norte.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">NORTE</h5>
-                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#norte">
-                    VER
-                  </button>
-                </div>
-              </div>
+  <div class="row">
+    <div class="col">
+      <div class="card text-center mb-3" style="width: 18rem;">
+        <img src="assets/images/norte.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">NORTE</h5>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#norte">
+            VER
+          </button>
         </div>
-
-        <div class="col">
-          <div class="card text-center mb-3" style="width: 18rem;">
-              <img src="assets/images/sur.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">SUR</h5>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sur">
-                  VER
-                </button>
-              </div>
-            </div>
-        </div>
-
-        <div class="col">
-          <div class="card text-center mb-3" style="width: 18rem;">
-            <img src="assets/images/valles.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">VALLES</h5>
-              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#valles">
-                VER
-              </button>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
-</div>
-  
-  <!-- Modal Norte-->
-  <div class="modal fade modal-xl" id="norte" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Norte de Quito</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Nombre Conductor</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Disponibilidad</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for(route of routes; track route.id_routes){
-                @if(route.zone_id == 1){
-                    
-                    <tr>
-                      <td>{{route.name}}</td>
-                      <td>{{route.description}}</td>
-                      <td>{{route.availability}}</td>
-                      <td>{{route.price}}</td>
-                      <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Servicio
-                      </button></td>
-                    </tr>
-                }
-            }
-             
-            </tbody>
-          </table>
 
+    <div class="col">
+      <div class="card text-center mb-3" style="width: 18rem;">
+        <img src="assets/images/sur.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">SUR</h5>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sur">
+            VER
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card text-center mb-3" style="width: 18rem;">
+        <img src="assets/images/valles.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">VALLES</h5>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#valles">
+            VER
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Modal Servicio-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Norte-->
+<div class="modal fade modal-xl" id="norte" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
-        Desea aceptar el siguiente servicio
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Norte de Quito</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)="submit()">Aceptar</button>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre Conductor</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Disponibilidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Servicio</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(route of routes; track route.id_routes){
+            @if(route.zone_id == 1){
+
+            <tr>
+              <td>{{route.name}}</td>
+              <td>{{route.description}}</td>
+              <td>{{route.availability}}</td>
+              <td>{{route.price}}</td>
+              <td><button type="button" class="btn btn-success" data-bs-toggle="modal"
+                  (click)="postRegister(route.id_routes)">
+                  Tomar servicio
+                </button></td>
+            </tr>
+            }
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
 
-  <!-- Modal Sur-->
-  <div class="modal fade modal-xl" id="sur" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Sur de Quito</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Nombre Conductor</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Disponibilidad</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for(route of routes; track route.id_routes){
-                @if(route.zone_id == 2){
-                    
-                    <tr>
-                      <td>{{route.name}}</td>
-                      <td>{{route.description}}</td>
-                      <td>{{route.availability}}</td>
-                      <td>{{route.price}}</td>
-                      <td><button class="btn btn-success">Servicio</button></td>
-                    </tr>
-                }
-            }
-             
-            </tbody>
-          </table>
 
-        </div>
-        
+
+<!-- Modal Sur-->
+<div class="modal fade modal-xl" id="sur" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Sur de Quito</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre Conductor</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Disponibilidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Servicio</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(route of routes; track route.id_routes){
+            @if(route.zone_id == 2){
+
+            <tr>
+              <td>{{route.name}}</td>
+              <td>{{route.description}}</td>
+              <td>{{route.availability}}</td>
+              <td>{{route.price}}</td>
+              <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Servicio
+                </button></td>
+            </tr>
+            }
+            }
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Valles-->
+<div class="modal fade modal-xl" id="valles" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Valles</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre Conductor</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Disponibilidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Servicio</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(route of routes; track route.id_routes){
+            @if(route.zone_id == 3){
+
+            <tr>
+              <td>{{route.name_d}}</td>
+              <td>{{route.description}}</td>
+              <td>{{route.availability}}</td>
+              <td>{{route.price}}</td>
+              <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Servicio
+                </button></td>
+            </tr>
+            }
+            }
+
+          </tbody>
+        </table>
+
       </div>
     </div>
   </div>
-  
-  <!-- Modal Valles-->
-  <div class="modal fade modal-xl" id="valles" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Rutas Valles</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Nombre Conductor</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Disponibilidad</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Servicio</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for(route of routes; track route.id_routes){
-                @if(route.zone_id == 3){
-                    
-                    <tr>
-                      <td>{{route.name_d}}</td>
-                      <td>{{route.description}}</td>
-                      <td>{{route.availability}}</td>
-                      <td>{{route.price}}</td>
-                      <td><button class="btn btn-success">Servicio</button></td>
-                    </tr>
-                }
-            }
-             
-            </tbody>
-          </table>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>

@@ -11,10 +11,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './customer.component.css'
 })
 export class CustomerComponent {
-  userId = this.route.snapshot.params['id']
+  userId = this.activatedRoute.snapshot.params['id']
   customer: FormGroup;
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private route: ActivatedRoute) {
-    if (route.snapshot.params['id'] == '0'){}
+  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activatedRoute: ActivatedRoute) {
+    if (activatedRoute.snapshot.params['id'] == '0'){}
     this.customer = this.formBuilder.group({
       name: [null, Validators.required],
       lastname: [null, Validators.required],
