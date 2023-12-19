@@ -7,19 +7,19 @@
   </div>
 </nav>
 </div>
-
+<br>
 <div class="container d-flex align-items-center">
   <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
+                <div class="carousel-item active" data-bs-interval="3000">
                   <img src="assets/images/routes-form1.jpeg" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
+                <div class="carousel-item" data-bs-interval="3000">
                   <img src="assets/images/routes-form2.jpeg" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
+                <div class="carousel-item" data-bs-interval="3000">
                   <img src="assets/images/routes-form3.jpeg" class="d-block w-100" alt="...">
       
                 </div>
@@ -39,7 +39,7 @@
     <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
       <p class="h1">Sign up</p>
 
-      <p>Selecciona los campos requeridos</p>
+      <p>Complete sus datos correctamente para brindar un mejor servicio.</p>
   </div>
       <form [formGroup]="form" (ngSubmit)="submit()">
 
@@ -52,12 +52,12 @@
             <div class="alert-validation">Por favor ingrese un número de cédula válido</div>
           }
           @if(form.controls['cedula'].hasError('minlength')&& form.controls['cedula'].dirty){
-            <div class="alert-validation">Debe contener 10 dígitos</div>
+            <div class="alert-validation">Debe contener 3 dígitos</div>
           }
           @if(form.controls['cedula'].hasError('maxlength')&& form.controls['cedula'].touched){
             <div class="alert-validation">Debe contener 10 dígitos</div>
           }
-
+          <br>
           <label for="email" class="form-label">Email: </label>
           <input type="email" class="form-control" id="email" formControlName="email" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['email'].hasError('required') && form.controls['email'].touched){
@@ -69,7 +69,7 @@
           @if(form.controls['email'].hasError('pattern') && form.controls['email'].dirty){
             <div class="alert-validation"> ...&#64;yavirac.edu.ec</div>
           }
-
+          <br>
           <label  class="form-label">Establezca su contraseña: </label>
           <input type="password" class="form-control" formControlName="password" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
@@ -78,7 +78,7 @@
           @if(form.controls['password'].hasError('minlength') && form.controls['password'].dirty){
             <div class="alert-validation">La contraseña debe contener al menos 5 caracteres</div>
           }
-
+          <br>
           <label class="form-label">Elija el tipo de usuario: </label>
           <select class="form-select" formControlName="id_role" style="background-color: rgb(240, 240, 240);">
             @for(rol of roles; track rol.id_role){
@@ -89,9 +89,10 @@
           @if(form.controls['id_role'].hasError('required') && form.controls['id_role'].touched){
             <div class="alert-validation">Por favor elija una opción</div>
           }
-       
-        <button type="submit" class="btn btn-success"
-        style="position: relative; left: 80px; top: 10px; width: 140px; border-color: black;">Enviar</button>
+          <br>
+          <div class="row d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" style="width: 200px;">Enviar</button>
+          </div>
       </form>
     </div>
   </div>
