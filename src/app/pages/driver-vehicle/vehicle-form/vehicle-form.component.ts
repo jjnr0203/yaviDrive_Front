@@ -7,38 +7,76 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-vehicle-form',
   templateUrl: './vehicle-form.component.html',
-  styleUrl: './vehicle-form.component.css'
+  styleUrl: './vehicle-form.component.css',
 })
 export class VehicleFormComponent {
-  driverId = this.router.snapshot.params['id']
+  driverId = this.router.snapshot.params['id'];
+  driver: any = {};
+  vehicle: any = {};
   vehicleForm: FormGroup;
-  constructor(private httpClient: HttpClient, private formBuilder: FormBuilder, private route: Router,private router: ActivatedRoute) {
-    if (router.snapshot.params['id'] == '0'){}
+  constructor(
+    private httpClient: HttpClient,
+    private formBuilder: FormBuilder,
+    private route: Router,
+    private router: ActivatedRoute
+  ) {
+    if (router.snapshot.params['id'] == '0') { }
+    if (router.snapshot.params['id'] != '0') {
+      this.getVehicle();
+    }
 
     this.vehicleForm = this.formBuilder.group({
       registration: [null, Validators.required],
       color: [null, Validators.required],
       model: [null, Validators.required],
       brand: [null, Validators.required],
-      numSeats: [null, Validators.required],
-      idDriver: [this.driverId]
-    })
-  }
-
-  submit() {
-    this.vehicleForm.markAllAsTouched();
-    if(this.vehicleForm.valid){
-      const data = this.vehicleForm.value;
-      this.httpClient.post('http://localhost:3000/vehicle', data).subscribe(response => {
-      alert('vehiculo creado')
-      console.log(response)
-      this.vehicleForm.reset();
-      this.route.navigate(['login'])
-    },(error)=>{
-      console.log(error)
-      alert('error al crear el vehiculo');
+      numseats: [null, Validators.required],
+      iddriver: [this.driverId],
     });
   }
 
+  getVehicle() {
+    this.httpClient.get('http://localhost:3000/vehicle/' + this.driverId).subscribe((response) => {
+      this.vehicle = response;
+      console.log(this.vehicle)
+      this.vehicleForm.setValue(this.vehicle);
+    });
+  }
+
+  vehicleUpdate() {
+    this.getVehicle();
+    const data = this.vehicleForm.value;
+    this.httpClient
+      .put('http://localhost:3000/vehicle/'+ this.vehicle.iddriver, data)
+      .subscribe((response) => {  
+      },(error) => {
+        console.log(error)
+        alert('Error al actualizar el vehículo');
+      });
+  }
+
+  submit() {
+    if (this.vehicle) {
+      this.vehicleUpdate;
+      alert('actualizado')
+      this.route.navigate(['driverhome/'+ this.driverId])
+    } else {
+      this.vehicleForm.markAllAsTouched();
+      if (this.vehicleForm.valid) {
+        const data = this.vehicleForm.value;
+        this.httpClient.post('http://localhost:3000/vehicle', data).subscribe(
+          (response) => {
+            alert('vehiculo creado');
+            console.log(response);
+            this.vehicleForm.reset();
+            this.route.navigate(['login']);
+          },
+          (error) => {
+            console.log(error);
+            alert('error al crear el vehiculo');
+          }
+        );
+      }
+    }
   }
 }
