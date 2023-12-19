@@ -12,11 +12,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './driver-form.component.css'
 })
 export class DriverFormComponent {
-  userId = this.router.snapshot.params['id']
+  userId = this.activatedRoute.snapshot.params['id']
   driverForm: FormGroup;
   driver: any = {};
   newDriver: any = {};
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute) {
+  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activatedRoute: ActivatedRoute) {
     if (this.userId == 0){}if (this.userId!=0) {
     this.getDriver();
     }
@@ -44,7 +44,7 @@ export class DriverFormComponent {
         this.newDriver = response;
         alert('conductor creado')
         console.log(this.newDriver)
-        this.route.navigate(['vehicle-form/'+ this.newDriver.id_driver])
+        this.router.navigate(['vehicle-form/'+ this.newDriver.id_driver])
         this.driverForm.reset();
       },(error) => {
         console.log(error)

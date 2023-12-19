@@ -10,18 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './vehicle-form.component.css',
 })
 export class VehicleFormComponent {
-  driverId = this.router.snapshot.params['id'];
+  driverId = this.activatedRoute.snapshot.params['id'];
   driver: any = {};
   vehicle: any = {};
   vehicleForm: FormGroup;
   constructor(
     private httpClient: HttpClient,
     private formBuilder: FormBuilder,
-    private route: Router,
-    private router: ActivatedRoute
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
-    if (router.snapshot.params['id'] == '0') { }
-    if (router.snapshot.params['id'] != '0') {
+    if (activatedRoute.snapshot.params['id'] == '0') { }
+    if (activatedRoute.snapshot.params['id'] != '0') {
       this.getVehicle();
     }
 
@@ -59,7 +59,7 @@ export class VehicleFormComponent {
     if (this.vehicle) {
       this.vehicleUpdate;
       alert('actualizado')
-      this.route.navigate(['driverhome/'+ this.driverId])
+      this.router.navigate(['driverhome/'+ this.driverId])
     } else {
       this.vehicleForm.markAllAsTouched();
       if (this.vehicleForm.valid) {
@@ -69,7 +69,7 @@ export class VehicleFormComponent {
             alert('vehiculo creado');
             console.log(response);
             this.vehicleForm.reset();
-            this.route.navigate(['login']);
+            this.router.navigate(['login']);
           },
           (error) => {
             console.log(error);
