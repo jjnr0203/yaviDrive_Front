@@ -37,15 +37,16 @@ export class RoutesComponent {
   }
 
 
-   postRegister(id:any){
+   postRegister(id:number){
     const data={
       customer:this.customer.id_customer,
       idRoute:id
     }
     this.httpClient.post('http://localhost:3000/register', data).subscribe(response=>{
-      this.router.navigate(['receipt/' + this.userId])
+    },(error) => {
+      console.log(error)
+      alert('Error al crear el registro');
     })
-    console.log(data)
   }
  
   
