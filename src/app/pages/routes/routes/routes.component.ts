@@ -45,7 +45,6 @@ export class RoutesComponent {
     this.httpClient.post('http://localhost:3000/register', data).subscribe(response=>{
     },(error) => {
       console.log(error)
-      alert('Error al crear el registro');
     })
   }
  
