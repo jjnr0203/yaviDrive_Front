@@ -11,24 +11,19 @@ import { RoutesComponent } from './pages/routes/routes/routes.component';
 import { RoutesFormComponent } from './pages/routes/routes-form/routes-form.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { DriverHomeComponent } from './pages/driver-home/driver-home.component';
-
 import{AuthGuard} from '../app/pages/auth/auth.guard'
 const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'customer/:id', component: CustomerComponent},
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
-  {path: 'home/:id', component:HomeComponent}, 
-  {path: 'routes/:id', component:RoutesComponent}, 
-  {path: 'routes-form/:id', component:RoutesFormComponent}, 
-  {path: 'customer/:id', component: CustomerComponent},
-  { path:'register/:id', component:RegisterComponent},
-  { path:'receipt/:id', component:ReceiptComponent},
-  { path: 'home/:id', component:HomeComponent}, 
-  { path: 'driverhome/:id', component:DriverHomeComponent}, 
-  { path: 'routes/:id', component:RoutesComponent}, 
-  { path: 'routes-form/:id', component:RoutesFormComponent}, 
-  { path: 'customer/:id', component: CustomerComponent},
+  {path: 'home/:id',canActivate:[AuthGuard], component:HomeComponent}, 
+  {path: 'routes/:id',canActivate:[AuthGuard], component:RoutesComponent}, 
+  {path: 'routes-form/:id',canActivate:[AuthGuard], component:RoutesFormComponent}, 
+  { path:'register/:id', canActivate:[AuthGuard],component:RegisterComponent},
+  { path:'receipt/:id',canActivate:[AuthGuard], component:ReceiptComponent},
+  { path: 'driverhome/:id',canActivate:[AuthGuard], component:DriverHomeComponent}, 
   ]
 
 

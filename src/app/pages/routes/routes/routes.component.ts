@@ -10,19 +10,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrl: './routes.component.css'
 })
 export class RoutesComponent {
-  userId = this.router.snapshot.params['id']
+  userId = this.activatedRoute.snapshot.params['id']
   routes:any = [] ;
-  user: any = {};
+  customer: any = {};
 
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  route: Router,private router: ActivatedRoute,) {
-    this.postRegister(7);
+
+  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activatedRoute: ActivatedRoute,) {
     this.getRoutes();
     this.getCustomer();
   }
 
   getRoutes() {
     this.httpClient
-      .get('http://localhost:3000/routes')
+      .get('http://localhost:3000/routes/')
       .subscribe((respuesta: any) => {
         this.routes = respuesta;
         console.log(this.routes);
@@ -31,29 +31,33 @@ export class RoutesComponent {
 
   getCustomer() {
     this.httpClient.get('http://localhost:3000/customer/' + this.userId).subscribe(response => {
-      this.user = response
-      console.log(this.user)
-
+      this.customer = response
+      console.log(this.customer)
     })
   }
 
 
    postRegister(id:number){
     const data={
-      customer:this.user.id_customer,
+      customer:this.customer.id_customer,
       idRoute:id
     }
-    console.log(data)
+    this.httpClient.post('http://localhost:3000/register', data).subscribe(response=>{
+    },(error) => {
+      console.log(error)
+    })
   }
  
   
-  submit() {
-    if (this.routes.valid) {
-      const data = this.routes.value;
-      this.httpClient.post('http://localhost:3000/routes', data).subscribe(response => {
-        this.routes.navigate(['receipt/' + this.userId])
-  });
-}
-  }
+  /* submit() {
+    this.routes.markAllAsTouched();
+        const data = this.routes.value;
+        this.httpClient.get('http://localhost:3000/routes/', data).subscribe(response => {
+          this.routes.navigate(['receipt/' + this.userId])
+        }, (error) => {
+          console.log(error);
+          alert('Error de ruta');
+        });
+      } */
 
 }

@@ -1,7 +1,53 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src=""> YAVIDRIVE</a>
+      <p>{{userId.name_c}}</p>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Conductor</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                      <a class="nav-link"  style="color: white;" [routerLink]="['/driver-home', userId]">INICIO</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" style="color: white;" [routerLink]="['/routes-form', userId]">CREAR RUTA</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  style="color: white;" [routerLink]="['/register', userId]">REGISTRO</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  style="color: white;" [routerLink]="['/vehicle-form',userId]">EDITAR DATOS DEL VEHICULO</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  style="color: white;" [routerLink]="['/login']">CERRAR SESION</a>
+                  </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-success" type="submit">Buscar</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</nav>
+
 <!--Recibo del Driver-->
 <br>
 <br>
+<div class="container mt-4">
+  <div class="row d-flex align-items-center justify-content-center">
+      
 @for (registro of registros; track registro.phone_c) {
+  <div class="col-lg-6 mb-4 mx-auto">
     <div class="card text-center card-center border border-secondary">
       <div class="row g-0">
         <div class="col-md-4">
@@ -17,4 +63,10 @@
           </div>
         </div>
       </div>
-}
+    </div>
+  }
+  </div>
+</div>
+
+      
+

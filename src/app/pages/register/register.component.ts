@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class RegisterComponent {
-  userId = this.router.snapshot.params['id']
+  userId = this.activateRoute.snapshot.params['id']
   registros: any = [] ;
 
-  constructor(protected  httpClient: HttpClient,protected  route: Router,private router: ActivatedRoute) {
+  constructor(protected  httpClient: HttpClient,protected  router: Router,private activateRoute: ActivatedRoute) {
     this.getRegister();
 
   }
