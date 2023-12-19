@@ -69,14 +69,16 @@
                     <small style="color: red;">Elija un campo</small>
                 }
             </div>
-            @if(routeinfo == null){
-                <button typre="submit" class="btn btn-success">Enviar</button>
-
-                
-            }
-            @if(routeinfo){
-                <button type="submit" class="btn btn-primary">Actualizar</button>
-            }
+            <div class="button">
+                @if(routeinfo == null){
+                    <button style="position: absolute;right: 28%;" type="submit" class="btn btn-success">Enviar</button>
+    
+                    
+                }
+                @if(routeinfo){
+                    <button style="position: absolute; right: 28%;" type="submit" class="btn btn-primary">Actualizar</button>
+                }
+            </div>
         </form>
     </div>
 </div>
