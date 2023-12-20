@@ -44,7 +44,7 @@ export class DriverFormComponent {
         this.newDriver = response;
         alert('conductor creado')
         console.log(this.newDriver)
-        this.router.navigate(['vehicle-form/'+ this.newDriver.id_driver])
+        this.router.navigate(['vehicle-form/'+ this.userId])
         this.driverForm.reset();
       },(error) => {
         console.log(error)

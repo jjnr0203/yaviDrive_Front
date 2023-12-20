@@ -5,8 +5,7 @@
 
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src=""> YAVIDRIVE</a>
-                <p>{{userId.name_c}}</p>
+                <a class="navbar-brand" href="#"><img src="assets/images/logo yavidrive.jpg" style="width: 40px; height: 40px;"> YAVIDRIVE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -14,12 +13,14 @@
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Usuario</h5>
+                        <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="{{user.photo}}" style="width: 50px;height: 50px;">{{user.name_c}} {{user.lastname}}</h4>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            
+                            
                             <li class="nav-item">
                                 <a class="nav-link"  style="color: white;"
                                     [routerLink]="['/home', userId]">INICIO</a>
@@ -41,10 +42,6 @@
                                     [routerLink]="['/login']">CERRAR SESION</a>
                             </li>
                         </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success" type="submit">Buscar</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -58,12 +55,11 @@
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Prepárate para conducir con la app de
-                                Yavidrive</h1>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido {{user.name_c}} vive nuevas experiencias viajando con nosotros.</h1>
                             <p class="lead fw-normal text-white-50 mb-4">Viaja con comodidad, llega con confianza, tu
                                 destino está a solo un clic de distancia.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#" [routerLink]="['/login']">Comenzar</a>
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#">Comenzar</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#!">Leer Más</a>
                             </div>
                         </div>
@@ -75,7 +71,7 @@
             </div>
         </header>
 
-
+        
         <!-- CARDS -->
         <section class="py-5">
             <div class="container px-5 my-5">
@@ -234,8 +230,8 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-7">
                         <div class="text-center">
-                            <div class="fs-4 mb-4 fst-italic">""La libertad de elegir es el regalo más preciado que
-                                podemos dar a los viajeros, y Yavidrive lo entrega con cada viaje."</div>
+                            <div class="fs-4 mb-4 fst-italic">"La libertad de elegir es el regalo más preciado que
+                                podemos dar a los viajeros y Yavidrive lo entrega con cada viaje."</div>
                             <div class="d-flex align-items-center justify-content-center">
                                 <img class="rounded-circle me-3"
                                     src="https://www.faq-mac.com/wp-content/uploads/2009/10/25050_640.jpg" alt="..."
