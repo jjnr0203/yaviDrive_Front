@@ -24,47 +24,48 @@
         </button>
       </div>
     </div>
+    <br>
     <div class="col-lg-6 col-md-12 col-sm-12">
-      <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
-        <p class="h1">YaviDrive</p>
-      </div>
       <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
         <p class="h6"> Estás por fomar parte de YaviDrive, completa los datos de tu vehículo e inicia sesión para continuar</p>
       </div>
       <form [formGroup]="vehicleForm" (ngSubmit)="submit()">
+        <div style="text-align: center;">
+        <p style="color: red;">Los campos maracados por * son obligatorio</p>
+        </div>
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Matrícula: </label>
+          <label class="form-label">Matrícula  * </label>
           <input type="text" class="form-control" formControlName="registration">
           @if(vehicleForm.controls['registration'].hasError('required') && vehicleForm.controls['registration'].touched){
-            <div class="alert-validation">Por favor escriba la matrúcla del vehículo</div>
+            <small style="color: red;">Por favor escriba la matrúcla del vehículo</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Color: </label>
+          <label class="form-label">Color  *</label>
           <input type="text" class="form-control" formControlName="color">
           @if(vehicleForm.controls['color'].hasError('required') && vehicleForm.controls['color'].touched){
-            <div class="alert-validation">Por favor escriba el color de su vehículo</div>
+            <small style="color: red;">Por favor escriba el color de su vehículo</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label  class="form-label">Modelo </label>
+          <label  class="form-label">Modelo  *</label>
           <input type="text" class="form-control" formControlName="model">
           @if(vehicleForm.controls['model'].hasError('required') && vehicleForm.controls['model'].touched){
-            <div class="alert-validation">Por favor ingrese el modelo del vehículo</div>
+            <small style="color: red;">Por favor ingrese el modelo del vehículo</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label  class="form-label">Marca </label>
+          <label  class="form-label">Marca  *</label>
           <input type="text" class="form-control" formControlName="brand">
           @if(vehicleForm.controls['brand'].hasError('required') && vehicleForm.controls['brand'].touched){
-            <div class="alert-validation">Por favor indique la marca de su vehículo</div>
+            <small style="color: red;">Por favor indique la marca de su vehículo</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label  class="form-label">Capacidad de pasajeros del vehículo </label>
+          <label  class="form-label">Capacidad de pasajeros del vehículo  *</label>
           <input type="number" class="form-control" formControlName="numseats">
           @if(vehicleForm.controls['numseats'].hasError('required') && vehicleForm.controls['numseats'].touched){
-            <div class="alert-validation">Por favor indique la capacidad de pasajeros de su vehículo</div>
+            <small style="color: red;">Por favor indique la capacidad de pasajeros de su vehículo</small>
           }
         </div>
         <div class="row d-flex justify-content-center">

@@ -1,8 +1,7 @@
 <div>
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src=""> YAVIDRIVE</a>
-      <p>{{userId.name_c}}</p>
+      <a class="navbar-brand" href="#"><img height="45" width="45" src="assets/images/logo_yavidrive-removebg.png"> <b> YAVIDRIVE</b></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -45,7 +44,7 @@
   <h1 class="text-center">¡Elije tu ruta!</h1>
 </div>
 <div style="text-align: center;" class="mb-3 col-10 mx-auto text-primary">
-  <p>El destino que elegias hara que puedas llegar seguro a casa, tu familia espera por ti.</p>
+  <p class="h6">El destino que elijas nos ayuada a que puedas llegar seguro a casa, tu familia espera por ti.</p>
 </div>
 
 <div class="container d-flex align-items-center">
@@ -162,9 +161,10 @@
               <td>{{route.description}}</td>
               <td>{{route.availability}}</td>
               <td>{{route.price}}</td>
-              <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Servicio
-                </button></td>
+              <td><button type="button" class="btn btn-success" data-bs-toggle="modal"
+                (click)="postRegister(route.id_routes)">
+                Tomar servicio
+              </button></td>
             </tr>
             }
             }
@@ -207,9 +207,10 @@
               <td>{{route.description}}</td>
               <td>{{route.availability}}</td>
               <td>{{route.price}}</td>
-              <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Servicio
-                </button></td>
+              <td><button type="button" class="btn btn-success" data-bs-toggle="modal"
+                (click)="postRegister(route.id_routes)">
+                Tomar servicio
+              </button></td>
             </tr>
             }
             }
