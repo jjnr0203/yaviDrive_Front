@@ -2,7 +2,7 @@
 <nav class="navbar " style="background-color: #1E1E1E;" >
   <div class="container-fluid">
     <a class="navbar-brand" style="color: white;">
-      YAVIDRIVE 
+      <b>YAVIDRIVE</b> 
     </a>
   </div>
 </nav>
@@ -14,13 +14,13 @@
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
-                  <img src="assets/images/carrusel-login.jpeg" class="d-block w-100" alt="...">
+                  <img src="assets/images/sign up4.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/images/carrusel-login1.jpeg" class="d-block w-100" alt="...">
+                  <img src="assets/images/sign-up1.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/images/carrusel-login2.jpeg" class="d-block w-100" alt="...">
+                  <img src="assets/images/sign-up2.jpeg" class="d-block w-100" alt="...">
       
                 </div>
               </div>
@@ -41,9 +41,14 @@
 
       <p>Complete sus datos correctamente para brindar un mejor servicio.</p>
   </div>
+  <div class="mb-3 col-10 mx-auto text-danger" >
+    <p class="h6">Los campos marcados con * son obligatorios</p>
+</div>
       <form [formGroup]="form" (ngSubmit)="submit()">
-
-          <label class="form-label">Cédula: </label>
+        <div class="mb-3 col-10 mx-auto text-danger">
+          <p class="h6">Los campos marcados con * son obligatorios</p>
+      </div>
+        <label class="form-label"><b>Cédula</b><b style="color: red;">  *</b></label>
           <input type="text" class="form-control" formControlName="cedula" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['cedula'].hasError('required') && form.controls['cedula'].touched){
             <div class="alert-validation">Por favor ingrese su número de cédula</div>
@@ -58,7 +63,7 @@
             <div class="alert-validation">Debe contener 10 dígitos</div>
           }
           <br>
-          <label for="email" class="form-label">Email: </label>
+          <label class="form-label"><b>Email</b><b style="color: red;">  *</b></label>
           <input type="email" class="form-control" id="email" formControlName="email" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['email'].hasError('required') && form.controls['email'].touched){
             <div class="alert-validation">Por favor ingrese su email</div>
@@ -70,7 +75,7 @@
             <div class="alert-validation"> ...&#64;yavirac.edu.ec</div>
           }
           <br>
-          <label  class="form-label">Establezca su contraseña: </label>
+          <label class="form-label"><b>Establezca su contraseña</b><b style="color: red;">  *</b></label>
           <input type="password" class="form-control" formControlName="password" style="background-color: rgb(240, 240, 240);">
           @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
             <div class="alert-validation">Por favor ingrese una contraseña</div>
@@ -79,7 +84,7 @@
             <div class="alert-validation">La contraseña debe contener al menos 5 caracteres</div>
           }
           <br>
-          <label class="form-label">Elija el tipo de usuario: </label>
+          <label class="form-label"><b>Elija el tipo de usuario</b><b style="color: red;">  *</b></label>
           <select class="form-select" formControlName="id_role" style="background-color: rgb(240, 240, 240);">
             @for(rol of roles; track rol.id_role){
               <option value= {{rol.id_role}}>{{rol.name}}</option>

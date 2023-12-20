@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
   {path: 'home/:id', component:HomeComponent}, 
   {path: 'routes/:id',canActivate:[AuthGuard], component:RoutesComponent}, 
-  {path: 'routes-form/:id',canActivate:[AuthGuard], component:RoutesFormComponent}, 
+  {path: 'routes-form/:id', component:RoutesFormComponent}, 
   { path:'register/:id', canActivate:[AuthGuard],component:RegisterComponent},
   { path:'receipt/:id',canActivate:[AuthGuard], component:ReceiptComponent},
-  { path: 'driverhome/:id',canActivate:[AuthGuard], component:DriverHomeComponent}, 
+  { path: 'driverhome/:id', component:DriverHomeComponent}, 
   ]
 
 

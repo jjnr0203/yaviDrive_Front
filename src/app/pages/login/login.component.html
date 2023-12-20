@@ -1,22 +1,23 @@
 <nav class="navbar " style="background-color: #1E1E1E;" >
   <div class="container-fluid">
     <a class="navbar-brand" style="color: white;">
-      YAVIDRIVE 
+      <b>YAVIDRIVE</b>
     </a>
   </div>
 </nav>
 
-<div class="d-flex flex-wrap-reverse" style="background-color: rgba(202, 202, 202, 0.705); position: absolute; top: 56px; left: 710px;  width: 653px; height: 585px; ">
+<div class="d-flex flex-wrap-reverse" style="background-color: rgba(202, 202, 202, 0.705); position: absolute; top: 56px; left: 710px;  width: 607px; height: 585px; ">
   <h1 class="titulo" style="text-align: left; position: absolute; top:20px; left: 130px; color: rgb(27, 27, 27);">Bienvenido a Yavidrive</h1>
   <div class="d-flex align-items-start">
-    <img src="assets/images/carrusel-login2.jpeg" style="width:725px; height: 585px; position: absolute; top: 0px; right: 650px;">
+    <img src="assets/images/customer2.jpeg" style="width:725px; height: 585px; position: absolute; top: 0px; right: 600px;">
   </div>
     <div class="row">
       <div class="col-8 mx-auto">
         <form [formGroup]="form" (ngSubmit)="submitForm()">
+         
   
           <div class="mb-3" style="position: absolute; right: 200px; top: 150px; width: 300px; color: white;">
-            <label class="form-label" style="color: black;">Email o cedula: </label>
+            <label class="form-label" style="color: black;"><b>Email o cédula</b><b style="color: red;">  *</b></label>
             <input type="text" class="form-control" formControlName="user" style="background-color: rgba(255, 255, 255, 0); border-bottom:2px solid rgb(0, 0, 0);">
             @if(form.controls['user'].hasError('required') && form.controls['user'].touched){
               <div class="alert-validation"  style="color: red;">El campo no puede estar vacío</div>
@@ -24,7 +25,7 @@
           </div>
   
           <div class="mb-3" style="position: absolute; right: 200px; top: 250px; width: 300px; color:white">
-            <label  class="form-label" style="color: black;">Ingrese su contraseña: </label>
+            <label class="form-label" style="color: black"><b>Ingrese su contraseña</b><b style="color: red;">  *</b></label>
             <input type="password" class="form-control" formControlName="password" style=" background-color: rgba(255, 255, 255, 0); border-bottom:2px solid rgb(0, 0, 0);">
             @if(form.controls['password'].hasError('required') && form.controls['password'].touched){
               <div class="alert-validation" style="color: red;" >Por favor ingrese su contraseña</div>

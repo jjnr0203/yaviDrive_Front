@@ -1,53 +1,74 @@
-<nav class="navbar"  style="background-color: #1E1E1E;" >
-  <div class="container-fluid">
-    <a class="navbar-brand" style="color: white;">
-      YAVIDRIVE 
-    </a>
-  </div>
-</nav>
-
-  <div class="col-lg-6 col-md-12 col-sm-12"> 
-    <h1 class="titulo" style=" position: absolute; top: 55px; left: 870px;">Datos Personales</h1>
-    <h6 class="texto" style="text-align: right; position: relative; top:-260px; left: 150px;">Asegurate de llenar todos los campos</h6>
-    <div class="Imagen">
-      <img src="assets/images/customer-imagen.jpeg" 
-      style="position: absolute; left: 0px; top: 56px; width: 700px; height: 585px;">
-    </div>
-    <div class="row" style="position: absolute; left: 745px; top: 230px; width: 600px;">
-      <div class="col-8 mx-auto">
+<div class="container d-flex align-items-center">
+  <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                  <img src="assets/images/customer1.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="assets/images/customer2.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="assets/images/sign-up1.jpeg" class="d-block w-100" alt="...">
+      
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      </div>
+      <div class = "col-lg-6 col-md-12 col-sm-12">
         <form [formGroup]="customer" (ngSubmit)="submit()">
+          <div class="mb-3 col-10 mx-auto" style="text-align: center;">
+            <p class="h1">Datos Personales</p>
+          </div>
+          <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
+            <p class="h6">Asegurate de llenar todos los campos</p>
+          </div>
+          <div class="mb-3 col-10 mx-auto text-danger">
+            <p class="h6">Los campos que tienen * son obligatorios</p>
+          </div>
           <div class="mb-3 col-10 mx-auto">
-            <label class="form-label">Nombres: </label>
-            <input type="text" class="form-control" formControlName="name" style="background-color: rgb(240, 240, 240);">
+            <label class="form-label"><b>Nombres</b><b style="color: red;">  *</b></label>
+            <input type="text" class="form-control" formControlName="name">
             @if(customer.controls['name'].hasError('required') && customer.controls['name'].touched){
               <div class="alert-validation" style="color: red">Por favor escriba su nombre</div>
             }
           </div>
           <div class="mb-3 col-10 mx-auto">
-            <label class="form-label">Apellidos: </label>
-            <input type="text" class="form-control" formControlName="lastname" style="background-color: rgb(240, 240, 240);">
+            <label class="form-label"><b>Apellidos</b><b style="color: red;">  *</b></label>
+            <input type="text" class="form-control" formControlName="lastname">
             @if(customer.controls['lastname'].hasError('required') && customer.controls['lastname'].touched){
               <div class="alert-validation"  style="color: red">Por favor escriba sus apellidos</div>
             }
           </div>
-          <div class="mb-3 col-10 mx-auto" style="position: absolute; top: -95px; width: 190px; right: 265px;">
-            <label  class="form-label">Ingrese el URL de su Foto </label>
-            <input type="text" class="form-control" formControlName="photo" style="background-color: rgb(240, 240, 240);">
+          <div class="mb-3 col-10 mx-auto">
+            <label class="form-label"><b>Ingrese el URL de su Foto</b><b style="color: red;">  *</b></label>
+            <input type="text" class="form-control" formControlName="photo">
             @if(customer.controls['photo'].hasError('required') && customer.controls['photo'].touched){
               <div class="alert-validation"  style="color: red">Por favor suba su foto</div>
             }
           </div>
           <div class="mb-3 col-10 mx-auto">
-            <label  class="form-label">Celular </label>
-            <input type="number" class="form-control" formControlName="phone" style="background-color: rgb(240, 240, 240);">
+            <label class="form-label"><b>Celular</b><b style="color: red;">  *</b></label>
+            <input type="number" class="form-control" formControlName="phone">
             @if(customer.controls['phone'].hasError('required') && customer.controls['phone'].touched){
               <div class="alert-validation"  style="color: red">Por favor ingrese su número celular</div>
             }
           </div>
-          <button type="submit" class="btn btn-success" style="position: relative; left: 130px; top: 30px; width: 140px; ">Enviar</button>
+          <br>
+          <button type="submit" class="btn btn-success" style="position: absolute; right: 26%;">Enviar</button>
         </form>
-      </div>
     </div>
   </div>
+</div>
+
   {{customer.controls['name'].status}}
   {{customer.controls['name'].status}}
