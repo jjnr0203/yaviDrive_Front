@@ -84,8 +84,6 @@ export class VehicleFormComponent {
         this.httpClient.post('http://localhost:3000/vehicle', data).subscribe(
           (response) => {
             alert(response);
-            console.log(response);
-            this.vehicleForm.reset();
             this.router.navigate(['login']);
           },
           (error) => {
