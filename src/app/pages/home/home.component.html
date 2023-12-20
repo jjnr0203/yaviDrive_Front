@@ -5,7 +5,7 @@
 
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="assets/images/logo yavidrive.jpg" style="width: 40px; height: 40px;"><b>YAVIDRIVE</b></a>
+                <a class="navbar-brand" href="#"><img height="45" width="45" src="assets/images/logo yavidrive.jpg" style="border-radius: 50px;"><b>YAVIDRIVE</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -59,8 +59,7 @@
                             <p class="lead fw-normal text-white-50 mb-4">Viaja con comodidad, llega con confianza, tu
                                 destino está a solo un clic de distancia.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#">Comenzar</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Leer Más</a>
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" [routerLink]="['/routes', userId]">Comenzar</a>
                             </div>
                         </div>
                     </div>
