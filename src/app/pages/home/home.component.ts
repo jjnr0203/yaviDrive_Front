@@ -19,7 +19,7 @@ export class HomeComponent {
   }
 
   getCustomer() {
-    this.httpClient.get('http://localhost:3000/customer/' + this.userId).subscribe(response => {
+    this.httpClient.get('http://localhost:3000/home/' + this.userId).subscribe(response => {
       this.user = response
       console.log(this.user)
 
