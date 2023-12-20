@@ -57,6 +57,8 @@ export class VehicleFormComponent {
 
   vehicleUpdate() {
     this.getVehicle();
+    this.vehicleForm.markAllAsTouched();
+    if (this.vehicleForm.valid) {
     const data = this.vehicleForm.value;
     this.httpClient
       .put('http://localhost:3000/vehicle/'+ this.vehicle.iddriver, data)
@@ -65,6 +67,7 @@ export class VehicleFormComponent {
         console.log(error)
         alert('Error al actualizar el vehículo');
       });
+    }
   }
 
   submit() {
