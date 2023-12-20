@@ -22,9 +22,6 @@
                       <a class="nav-link" style="color: white;" [routerLink]="['/routes-form', userId]">CREAR RUTA</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link"  style="color: white;" [routerLink]="['/register', userId]">REGISTRO</a>
-                  </li>
-                  <li class="nav-item">
                       <a class="nav-link"  style="color: white;" [routerLink]="['/vehicle-form',userId]">EDITAR DATOS DEL VEHICULO</a>
                   </li>
                   <li class="nav-item">
@@ -39,34 +36,42 @@
       </div>
   </div>
 </nav>
+<br>
+<br>
 
-<!--Recibo del Driver-->
-<br>
-<br>
-<div class="container mt-4">
-  <div class="row d-flex align-items-center justify-content-center">
-      
-@for (registro of registros; track registro.phone_c) {
-  <div class="col-lg-6 mb-4 mx-auto">
-    <div class="card text-center card-center border border-secondary">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="{{registro.photo_c}}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-              <p class="card-text">Fecha de inicio: {{registro.start_date}} </p>
-              <p class="card-text">Fecha de finalización: {{registro.end_date}}</p>
-              <p class="card-text">Nombre: {{registro.name_c}} {{registro.lastname_c}}</p>
-              <p class="card-text">Número de teléfono: {{registro.phone_c}}</p>
-            </div>
+<!--Registro del Driver-->
+<style>
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    font-size: 14px;
+    color: #666666;
+    font-family: "Open Sans";
+  }
+</style>
+  <div class="container">
+    <div class="row pt-5 m-auto">
+      @for (registro of registros; track registro.phone_c) {
+      <div class="col-md-6 col-lg-4 pb-3 mx-auto">
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-img" style="background-image: url(assets/images/norte.jpeg);"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="{{registro.photo_c}}" alt="Foto" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h6 class="card-title">Fecha de inicio:</h6>
+            <p class="card-text">{{registro.start_date}} </p>
+            <h6 class="card-title">Fecha de finalización:</h6>
+            <p class="card-text">{{registro.end_date}} </p>
+            <h6 class="card-title">Nombre:</h6>
+            <p class="card-text">{{registro.name_c}} {{registro.lastname_c}} </p>
+            <h6 class="card-title">Número de teléfono: </h6>
+            <p class="card-text"> {{registro.phone_c}}</p>
           </div>
         </div>
       </div>
+      }
     </div>
-  }
   </div>
-</div>
-
-      
-
