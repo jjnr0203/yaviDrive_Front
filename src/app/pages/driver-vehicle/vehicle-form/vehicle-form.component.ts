@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './vehicle-form.component.css',
 })
 export class VehicleFormComponent {
-  driverId = this.activatedRoute.snapshot.params['id'];
+  userId = this.activatedRoute.snapshot.params['id'];
   driver: any = {};
   vehicle: any = {};
   vehicleForm: FormGroup;
@@ -23,20 +23,32 @@ export class VehicleFormComponent {
     if (activatedRoute.snapshot.params['id'] == '0') { }
     if (activatedRoute.snapshot.params['id'] != '0') {
       this.getVehicle();
-    }
+      this.getDriver()
 
+    }
     this.vehicleForm = this.formBuilder.group({
       registration: [null, Validators.required],
       color: [null, Validators.required],
       model: [null, Validators.required],
       brand: [null, Validators.required],
       numseats: [null, Validators.required],
-      iddriver: [this.driverId],
+      iddriver: [null],
     });
   }
 
+  
+  getDriver(){
+    this.httpClient.get('http://localhost:3000/drivers/'+this.userId).subscribe(response=>{
+      this.driver= response
+      console.log(this.driver)
+       this.vehicleForm.patchValue({
+        iddriver: this.driver.id_driver
+      }) 
+    })
+  }
+
   getVehicle() {
-    this.httpClient.get('http://localhost:3000/vehicle/' + this.driverId).subscribe((response) => {
+    this.httpClient.get('http://localhost:3000/vehicle/' + this.userId).subscribe((response) => {
       this.vehicle = response;
       console.log(this.vehicle)
       this.vehicleForm.setValue(this.vehicle);
@@ -59,14 +71,16 @@ export class VehicleFormComponent {
     if (this.vehicle) {
       this.vehicleUpdate;
       alert('actualizado')
-      this.router.navigate(['driverhome/'+ this.driverId])
+      this.router.navigate(['driverhome/'+ this.userId])
     } else {
+      this.getDriver()
       this.vehicleForm.markAllAsTouched();
       if (this.vehicleForm.valid) {
         const data = this.vehicleForm.value;
+        console.log(data)
         this.httpClient.post('http://localhost:3000/vehicle', data).subscribe(
           (response) => {
-            alert('vehiculo creado');
+            alert(response);
             console.log(response);
             this.vehicleForm.reset();
             this.router.navigate(['login']);
