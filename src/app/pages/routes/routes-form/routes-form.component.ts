@@ -36,6 +36,7 @@ export class RoutesFormComponent{
   //fk zone
 zones : any = [];
 getZones(){
+
 this.httpClient.get('http://localhost:3000/zone').subscribe(response =>{
     this.zones = response;
     console.log(this.zones)

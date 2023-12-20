@@ -1,6 +1,8 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src=""> YAVIDRIVE</a>
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src=""><b>YAVIDRIVE</b></a>
       <p>{{userId.name_c}}</p>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar">
@@ -19,7 +21,7 @@
               <a class="nav-link" style="color: white;" [routerLink]="['/home', userId]">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white;" [routerLink]="['/routes',userId]">SERVICIO Rutas</a>
+              <a class="nav-link" style="color: white;" [routerLink]="['/routes',userId]">SERVICIO RUTAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="color: white;" [routerLink]="['/customer', userId]">EDITAR DATOS</a>
@@ -35,6 +37,7 @@
         </div>
       </div>
     </div>
+</div>
 </nav>
 <br>
 <br>

@@ -1,26 +1,15 @@
-<div style="text-align: center;">
-    <nav class="navbar " style="background-color: #1E1E1E;" >
-    <div class="container-fluid">
-      <a class="navbar-brand" style="color: white;">
-        <!-- <img src="/src/assets/images/logo yavidrive.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
-        YAVIDRIVE 
-      </a>
-    </div>
-    </nav>
-</div>
-
 <div class="container d-flex align-items-center">
     <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 mb-3 d-flex align-items-center">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="2000">
+                  <div class="carousel-item active" data-bs-interval="3000">
                     <img src="assets/images/routes-form1.jpeg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="2000">
+                  <div class="carousel-item" data-bs-interval="3000">
                     <img src="assets/images/routes-form2.jpeg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item" data-bs-interval="2000">
+                  <div class="carousel-item" data-bs-interval="3000">
                     <img src="assets/images/routes-form3.jpeg" class="d-block w-100" alt="...">
         
                   </div>
@@ -36,14 +25,15 @@
               </div>
         </div>
      <div class = "col-lg-6 col-md-12 col-sm-12">
-        <div class="row d-flex justify-content-center mb-5" style="text-align: center;">
-            <p class="h1">Route</p>
-
-            <p>Selecciona los campos requeridos</p>
+        <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
+            <p class="h6">Inserte correctamente todos los datos para poder brindar un mejor servicio a los clientes.</p>
+        </div>
+        <div class="mb-3 col-10 mx-auto text-danger">
+            <p class="h6">Los campos marcados con * son obligatorios</p>
         </div>
         <form [formGroup]="routesForm"  (ngSubmit)="submit()">
             <div class="mb-3 col-10 mx-auto">
-                <label class="form-label">Descripción: </label>
+                <label class="form-label"><b>Descripción</b><b style="color: red;">  *</b></label>
                 <input type="text" class="form-control" formControlName="description">
                 @if(routesForm.controls['description'].hasError ('required') && routesForm.controls['description'].touched){
                     <small style="color: red;">Campo Requerido</small>
@@ -51,7 +41,7 @@
             </div>
 
             <div class="mb-3 col-10 mx-auto">
-                <label class="form-label">Disponibilidad: </label>
+                <label class="form-label"><b>Disponibilidad</b><b style="color: red;">  *</b></label>
                 <select class="form-select" formControlName="availability">
                         <option value="true">Si</option>
                         <option value="false">No</option>
@@ -62,7 +52,7 @@
             </div>
 
             <div class="mb-3 col-10 mx-auto">
-                <label class="form-label">Precio: </label>
+                <label class="form-label"><b>Precio</b><b style="color: red;">  *</b></label>
                 <input type="number" class="form-control" formControlName="price">
                 @if(routesForm.controls['price'].hasError ('required') && routesForm.controls['price'].touched){
                     <small style="color: red;">Campo requerido</small>
@@ -70,7 +60,7 @@
             </div>
 
             <div class="mb-3 col-10 mx-auto">
-                <label class="form-label">Zona: </label>
+                <label class="form-label"><b>Zona</b><b style="color: red;">  *</b></label>
                 <select class="form-select" formControlName="id_zone">
                     @for (zone of zones; track zone.id_zone) {
                         <option value= {{zone.id_zone}}>{{zone.name}}</option>
@@ -80,16 +70,16 @@
                     <small style="color: red;">Elija un campo</small>
                 }
             </div>
+            <br>
             <div class="button">
                 @if(routeinfo == null){
-                    <button style="position: absolute;right: 28%;" type="submit" class="btn btn-success">Enviar</button>
-    
-                    
+                    <button style="position: absolute;right: 25%;" type="submit" class="btn btn-success">Enviar</button>
                 }
                 @if(routeinfo){
-                    <button style="position: absolute; right: 28%;" type="submit" class="btn btn-primary">Actualizar</button>
+                    <button style="position: absolute; right: 25%;" type="submit" class="btn btn-primary">Actualizar</button>
                 }
             </div>
         </form>
     </div>
+ </div>
 </div>

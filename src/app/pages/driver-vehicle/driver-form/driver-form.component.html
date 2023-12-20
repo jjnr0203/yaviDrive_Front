@@ -31,33 +31,35 @@
       <div class="mb-3 col-10 mx-auto text-primary" style="text-align: center;">
         <p class="h6"> Gracias por registrarte. Para continuar en tu rol de conductor completa tus datos</p>
       </div>
-      <form [formGroup]="driverForm" (ngSubmit)="submit()">
+      <form [formGroup]="driverForm" (ngSubmit)="submit()"> 
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Nombres: </label>
+
+          <p style="color: red;">Los campos marcados con * son requeridos</p>
+          <label class="form-label"><b>Nombres</b><b style="color: red;">  *</b></label>
           <input type="text" class="form-control" formControlName="name">
           @if(driverForm.controls['name'].hasError('required') && driverForm.controls['name'].touched){
-          <div class="alert-validation">Por favor escriba su nombre</div>
+          <small style="color: red;">Por favor escriba su nombre</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Apellidos: </label>
+          <label class="form-label"><b>Apellidos</b><b style="color: red;">  *</b></label>
           <input type="text" class="form-control" formControlName="lastname">
           @if(driverForm.controls['lastname'].hasError('required') && driverForm.controls['lastname'].touched){
-          <div class="alert-validation">Por favor escriba sus apellidos</div>
+          <small style="color: red;">Por favor escriba sus apellidos</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Foto </label>
+          <label class="form-label"><b>Foto</b><b style="color: red;">  *</b></label>
           <input type="text" class="form-control" formControlName="photo">
           @if(driverForm.controls['photo'].hasError('required') && driverForm.controls['photo'].touched){
-          <div class="alert-validation">Por favor ingrese una contraseña</div>
+          <small style="color: red;">Por favor ingrese una contraseña</small>
           }
         </div>
         <div class="mb-3 col-10 mx-auto">
-          <label class="form-label">Celular </label>
+          <label class="form-label"><b>Celular</b><b style="color: red;">  *</b></label>
           <input type="number" class="form-control" formControlName="phone">
           @if(driverForm.controls['phone'].hasError('required') && driverForm.controls['phone'].touched){
-          <div class="alert-validation">Por favor ingrese su número celular</div>
+          <small style="color: red;">Por favor ingrese su número celular</small>
           }
         </div>
         <div class="row d-flex justify-content-center">
