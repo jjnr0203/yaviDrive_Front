@@ -18,11 +18,11 @@ const routes: Routes = [
   {path: 'customer/:id', component: CustomerComponent},
   { path: 'driver/:id', component: DriverFormComponent },
   { path: 'vehicle-form/:id', component: VehicleFormComponent },
-  {path: 'home/:id', component:HomeComponent}, 
-  {path: 'routes/:id',canActivate:[AuthGuard], component:RoutesComponent}, 
+  {path: 'home/:id',component:HomeComponent}, 
+  {path: 'routes/:id', component:RoutesComponent}, 
   {path: 'routes-form/:id', component:RoutesFormComponent}, 
-  { path:'register/:id', canActivate:[AuthGuard],component:RegisterComponent},
-  { path:'receipt/:id',canActivate:[AuthGuard], component:ReceiptComponent},
+  { path:'register/:id',component:RegisterComponent},
+  { path:'receipt/:id', component:ReceiptComponent},
   { path: 'driverhome/:id', component:DriverHomeComponent}, 
   ]
 
