@@ -32,8 +32,7 @@
       </div>
     </div>
 </nav>
-<br>
-<br>
+<br><br><br><br>
 
 <!--Recibo del Customer-->
 <div class="row d-flex align-items-center">
@@ -50,7 +49,7 @@
       <p class="card-text">Descripción: {{recibo.description}}</p>
       <p class="card-text">Precio: {{recibo.price}}</p>
       <h5 class="card-title">Información del conductor y vehículo:</h5>
-      <img src="https://drive.google.com/file/d/1pmIJh5zDR8OqXzAzlf_5EUb4PsrA5jpL/view?usp=drive_link" alt="Foto del conductor" width="125" height="195">
+      <img src="{{recibo.photo_d}}" alt="Foto del conductor" width="125" height="195">
       <p class="card-text">Nombre: {{recibo.name_d}} {{recibo.lastname_d}}</p>
       <p class="card-text">Número de teléfono: {{recibo.phone_d}}</p>
       <p class="card-text">Número de placa: {{recibo.registration}}</p>

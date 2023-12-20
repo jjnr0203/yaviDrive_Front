@@ -50,18 +50,7 @@ export class SignUpComponent {
         console.log(error)
         alert('Error al crear el usuario');
       });
-      this.form.reset();
   }
-  }
-
-  userUpdate() {
-    const data = this.form.value;
-    this.httpClient
-      .put('http://localhost:3000/users/20', data)
-      .subscribe(response => {
-        alert(response)
-      }
-      );
   }
 }
 

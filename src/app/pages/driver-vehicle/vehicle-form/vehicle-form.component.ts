@@ -38,7 +38,7 @@ export class VehicleFormComponent {
 
   
   getDriver(){
-    this.httpClient.get('http://localhost:3000/drivers/'+this.userId).subscribe(response=>{
+    this.httpClient.get('http://localhost:3000/drivers/'+ this.userId).subscribe(response=>{
       this.driver= response
       console.log(this.driver)
        this.vehicleForm.patchValue({
@@ -72,7 +72,7 @@ export class VehicleFormComponent {
 
   submit() {
     if (this.vehicle) {
-      this.vehicleUpdate;
+      this.vehicleUpdate();
       alert('actualizado')
       this.router.navigate(['driverhome/'+ this.userId])
     } else {
