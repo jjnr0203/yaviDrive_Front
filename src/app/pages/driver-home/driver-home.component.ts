@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class DriverHomeComponent {
   userId = this.activateRouter.snapshot.params['id']
-  user: any = {};
+  driver: any = {};
   constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activateRouter: ActivatedRoute){
     if (activateRouter.snapshot.params['id'] == '0'){}
   
@@ -21,9 +21,9 @@ export class DriverHomeComponent {
   }
 
   getDriver(){
-    this.httpClient.get('http://localhost:3000/drivers/' + this.userId).subscribe(response =>{
-      this.user = response
-      console.log(this.user)
+    this.httpClient.get('http://localhost:3000/home/drivers/' + this.userId).subscribe(response =>{
+      this.driver = response
+      console.log(this.driver)
     })
   }
 }
