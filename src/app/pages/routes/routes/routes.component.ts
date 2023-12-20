@@ -11,11 +11,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RoutesComponent {
   userId = this.activatedRoute.snapshot.params['id']
-  routes:any = [] ;
+  routes: any = [];
   customer: any = {};
 
 
-  constructor(protected  httpClient: HttpClient, protected  formBuilder: FormBuilder,protected  router: Router,private activatedRoute: ActivatedRoute,) {
+  constructor(protected httpClient: HttpClient, protected formBuilder: FormBuilder, protected router: Router, private activatedRoute: ActivatedRoute,) {
     this.getRoutes();
     this.getCustomer();
   }
@@ -37,27 +37,20 @@ export class RoutesComponent {
   }
 
 
-   postRegister(id:number){
-    const data={
-      customer:this.customer.id_customer,
-      idRoute:id
-    }
-    this.httpClient.post('http://localhost:3000/register', data).subscribe(response=>{
-    },(error) => {
-      console.log(error)
-    })
-  }
- 
-  
-  /* submit() {
-    this.routes.markAllAsTouched();
-        const data = this.routes.value;
-        this.httpClient.get('http://localhost:3000/routes/', data).subscribe(response => {
-          this.routes.navigate(['receipt/' + this.userId])
-        }, (error) => {
-          console.log(error);
-          alert('Error de ruta');
-        });
-      } */
+  postRegister(id: number) {
+    const data = {
+      customer: this.customer.id_customer,
+      idRoute: id
+    };
 
+    this.httpClient.post('http://localhost:3000/register', data).subscribe(
+      (response: any) => {
+        alert(response)
+      },
+      (error: any) => {
+        alert('Error al crear el registro');
+        console.error(error);
+      }
+    );
+  }
 }
